@@ -7,16 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PriceVariedDpComponent implements OnInit {
 
-	private purchasePriceOne: number = null;
-	private purchasePriceTwo: number = null;
-	private purchasePriceThree: number = null;
-	private purchasePriceFour: number = null;
+	private purchasePriceOne = 225000;
+	private purchasePriceTwo = 250000;
+	private purchasePriceThree = 275000;
+	private purchasePriceFour = 300000;
+	private downPaymentPercentage = 5;
+
+	private downPaymentOne = ( this.purchasePriceOne * this.downPaymentPercentage) / 100;
+	private downPaymentTwo = ( this.purchasePriceTwo * this.downPaymentPercentage) / 100;
+	private downPaymentThree = ( this.purchasePriceThree * this.downPaymentPercentage ) / 100;
+	private downPaymentFour = ( this.purchasePriceFour * this.downPaymentPercentage) / 100;
+
 
 	constructor() {
-		this.purchasePriceOne = 225000;
-		this.purchasePriceTwo = 250000;
-		this.purchasePriceThree = 275000;
-		this.purchasePriceFour = 300000;
+
 	}
 
 	ngOnInit() {

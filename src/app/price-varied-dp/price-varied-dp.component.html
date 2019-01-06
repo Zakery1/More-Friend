@@ -7,12 +7,21 @@
 		<div class="display-pprices">${{purchasePriceThree}}</div>		
 		<div class="display-pprices">${{purchasePriceFour}}</div>	
 	  </div>
+	  <div class="ppc-row">
+		  <div class="display-pprices display-pprices-l">Down Payment</div>
+		  <div class="display-pprices">${{downPaymentOne}}</div>
+		  <div class="display-pprices">${{downPaymentTwo}}</div>
+		  <div class="display-pprices">${{downPaymentThree}}</div>
+		  <div class="display-pprices">${{downPaymentFour}}</div>
+	  </div>
 	</div>
 	<div class="mp">
 
 	</div>
 	<div class="loi">
 		<p class="input-line">Purchase Price #1<input [(ngModel)]="purchasePriceOne" type="number"></p>	
-		
+		<p class="input-line">Purchase Price #2<input [(ngModel)]="purchasePriceTwo" type="number"></p>	
+		<p class="input-line">Purchase Price #3<input [(ngModel)]="purchasePriceThree" type="number"></p>	
+		<p class="input-line">Purchase Price #4<input [(ngModel)]="purchasePriceFour" type="number"></p>	
 	</div>
 </div>
