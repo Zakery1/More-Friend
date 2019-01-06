@@ -1,10 +1,17 @@
 .nav-bar-main {
     height: 70px;
-    border-bottom: 2px solid black;
-    .title {
-        margin: 5px 0 5px 0;
-    }
-    .presented-by {
-        margin: 0;
-    }
+	border-bottom: 2px solid black;
+	.headers {
+		.title {
+			margin: 5px 0 5px 0;
+		}
+		.presented-by {
+			margin: 0;
+		}
+	}
+	.home-button {
+		position: absolute;
+		right: 20px;
+		top: 35px;
+	}
 }
