@@ -27,6 +27,9 @@ export class PriceVariedDpComponent implements OnInit {
 	private downPaymentFour = ( this.purchasePriceFour * this.downPaymentPercentage) / 100;
 
 	private loanAmountOne =  (this.purchasePriceOne * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
+	private loanAmountTwo =  (this.purchasePriceTwo * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
+	private loanAmountThree =  (this.purchasePriceThree * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
+	private loanAmountFour =  (this.purchasePriceFour * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
 
 	constructor() {
 

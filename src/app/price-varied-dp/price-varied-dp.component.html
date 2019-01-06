@@ -1,30 +1,42 @@
 <div class="pvdp-main">
-	<div class="ppc">
-	  <div class="ppc-row">	
-		<div class="display-pprices display-pprices-l">Purchase Price</div>
-		<div class="display-pprices">${{purchasePriceOne}}</div>		
-		<div class="display-pprices">${{purchasePriceTwo}}</div>		
-		<div class="display-pprices">${{purchasePriceThree}}</div>		
-		<div class="display-pprices">${{purchasePriceFour}}</div>	
-	  </div>
-	  <div class="ppc-row">
-		  <div class="display-pprices display-pprices-l">Down Payment</div>
-		  <div class="display-pprices">${{downPaymentOne}}</div>
-		  <div class="display-pprices">${{downPaymentTwo}}</div>
-		  <div class="display-pprices">${{downPaymentThree}}</div>
-		  <div class="display-pprices">${{downPaymentFour}}</div>
-	  </div>
-	  <div class="ppc-row">
-			<div class="display-pprices display-pprices-l">Loan Amount</div>
-			<div class="display-pprices">${{loanAmountOne}}</div>
-			<div class="display-pprices">${{loanAmountTwo}}</div>
-			<div class="display-pprices">${{loanAmountThree}}</div>
-			<div class="display-pprices">${{loanAmountFour}}</div>
-		</div>
-		
-	</div>
-	<div class="mp">
 
+	<div class="ppc-top">
+		<div class="ppc">
+			<div class="ppc-row">	
+				<div class="display-pprices display-pprices-l">Purchase Price</div>
+				<div class="display-pprices">${{purchasePriceOne}}</div>		
+				<div class="display-pprices">${{purchasePriceTwo}}</div>		
+				<div class="display-pprices">${{purchasePriceThree}}</div>		
+				<div class="display-pprices">${{purchasePriceFour}}</div>	
+			</div>
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Down Payment</div>
+				<div class="display-pprices">${{downPaymentOne}}</div>
+				<div class="display-pprices">${{downPaymentTwo}}</div>
+				<div class="display-pprices">${{downPaymentThree}}</div>
+				<div class="display-pprices">${{downPaymentFour}}</div>
+			</div>
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Loan Amount</div>
+				<div class="display-pprices">${{loanAmountOne}}</div>
+				<div class="display-pprices">${{loanAmountTwo}}</div>
+				<div class="display-pprices">${{loanAmountThree}}</div>
+				<div class="display-pprices">${{loanAmountFour}}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ppc">
+		<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Principal and Interest</div>
+				<div class="display-pprices">${{pAndIOne}}</div>
+				<div class="display-pprices">${{pAndITwo}}</div>
+				<div class="display-pprices">${{pAndIThree}}</div>
+				<div class="display-pprices">${{pAndIFour}}</div>
+		</div>
+	</div>
+
+	<div class="mp">
 	</div>
 	<div class="loi">
 		<p class="input-line">Down Payment %<input [(ngModel)]="downPaymentPercentage" type="number"></p>
