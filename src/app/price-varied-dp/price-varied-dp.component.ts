@@ -13,6 +13,14 @@ export class PriceVariedDpComponent implements OnInit {
 	private purchasePriceFour = 300000;
 	private downPaymentPercentage = 5;
 
+	private upfrontMiFf = 0;
+	private miPercentage = 0.37;
+	private estimatedTaxes = 0.85;
+	private estimateHOI = 0.3;
+	private interestRate = 4.75;
+	private mortgageYears = 30;
+
+
 	private downPaymentOne = ( this.purchasePriceOne * this.downPaymentPercentage) / 100;
 	private downPaymentTwo = ( this.purchasePriceTwo * this.downPaymentPercentage) / 100;
 	private downPaymentThree = ( this.purchasePriceThree * this.downPaymentPercentage ) / 100;
