@@ -5,18 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PriceVariedDpComponent } from './price-varied-dp/price-varied-dp.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    PriceVariedDpComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		NavbarComponent,
+		PriceVariedDpComponent,
+		DashboardComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
