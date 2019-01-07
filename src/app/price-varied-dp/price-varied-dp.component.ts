@@ -14,7 +14,7 @@ export class PriceVariedDpComponent implements OnInit {
 	private downPaymentPercentage = 5;
 
 	private upfrontMiFf = 0;
-	private miPercentage = 0.37;
+	private miPercentage = 0.2;
 	private estimatedTaxes = 0.85;
 	private estimateHOI = 0.3;
 	private interestRate = 4.75;
@@ -30,6 +30,15 @@ export class PriceVariedDpComponent implements OnInit {
 	private loanAmountTwo =  (this.purchasePriceTwo * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
 	private loanAmountThree =  (this.purchasePriceThree * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
 	private loanAmountFour =  (this.purchasePriceFour * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
+
+	updateDP() {
+		this.downPaymentOne = ( this.purchasePriceOne * this.downPaymentPercentage) / 100;
+		this.downPaymentTwo = ( this.purchasePriceTwo * this.downPaymentPercentage) / 100;
+		this.downPaymentThree = ( this.purchasePriceThree * this.downPaymentPercentage ) / 100;
+		this.downPaymentFour = ( this.purchasePriceFour * this.downPaymentPercentage) / 100;
+	}
+
+	
 
 	constructor() {
 
