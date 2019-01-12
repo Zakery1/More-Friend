@@ -70,17 +70,16 @@
 	<h4>Loan Officer Input</h4>
 	<br>
 	<div class="loi">
-		<p class="input-line">Down Payment %<input [(ngModel)]="downPaymentPercentage" type="number"></p>
-		<p class="input-line">Upfront MI/FF (%)<input [(ngModel)]="upfrontMiFf" type="number"></p>
-		<p class="input-line">Annual MI Percentage (%)<input [(ngModel)]="miPercentage" type="number"></p>
-		<p class="input-line">Estimated Taxes (%)<input [(ngModel)]="estimatedTaxes" type="number"></p>
-		<p class="input-line">Estimates HOI (%)<input [(ngModel)]="estimateHOI" type="number"></p>
-		<p class="input-line">Interest Rate (%)<input [(ngModel)]="interestRate" type="number"></p>
-		<p class="input-line">Length of Mortgage (Years)<input [(ngModel)]="mortgageYears" type="number"></p>
-		<p class="input-line">Purchase Price #1<input [(ngModel)]="purchasePriceOne" type="number"></p>
-		<p class="input-line">Purchase Price #2<input [(ngModel)]="purchasePriceTwo" type="number"></p>
-		<p class="input-line">Purchase Price #3<input [(ngModel)]="purchasePriceThree" type="number"></p>
-		<p class="input-line">Purchase Price #4<input [(ngModel)]="purchasePriceFour" type="number"></p>
-		<button (click)="update()">Update</button>
+		<p class="input-line">Down Payment %<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>
+		<p class="input-line">Upfront MI/FF (%)<input (input)="update()" [(ngModel)]="upfrontMiFf" type="number"></p>
+		<p class="input-line">Annual MI Percentage (%)<input (input)="update()" [(ngModel)]="miPercentage" type="number"></p>
+		<p class="input-line">Estimated Taxes (%)<input (input)="update()" [(ngModel)]="estimatedTaxes" type="number"></p>
+		<p class="input-line">Estimates HOI (%)<input (input)="update()" [(ngModel)]="estimateHOI" type="number"></p>
+		<p class="input-line">Interest Rate (%)<input (input)="update()" [(ngModel)]="interestRate" type="number"></p>
+		<p class="input-line">Length of Mortgage (Years)<input (input)="update()" [(ngModel)]="mortgageYears" type="number"></p>
+		<p class="input-line">Purchase Price #1<input (input)="update()" [(ngModel)]="purchasePriceOne" type="number"></p>
+		<p class="input-line">Purchase Price #2<input (input)="update()" [(ngModel)]="purchasePriceTwo" type="number"></p>
+		<p class="input-line">Purchase Price #3<input (input)="update()" [(ngModel)]="purchasePriceThree" type="number"></p>
+		<p class="input-line">Purchase Price #4<input (input)="update()" [(ngModel)]="purchasePriceFour" type="number"></p>
 	</div>
 </div>
