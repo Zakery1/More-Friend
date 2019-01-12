@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
 	selector: 'app-price-varied-dp',
 	templateUrl: './price-varied-dp.component.html',
@@ -30,6 +31,9 @@ export class PriceVariedDpComponent implements OnInit {
 	private loanAmountTwo =  (this.purchasePriceTwo * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
 	private loanAmountThree =  (this.purchasePriceThree * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
 	private loanAmountFour =  (this.purchasePriceFour * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
+
+	// tslint:disable-next-line:max-line-length
+	pAndIOne = ((this.interestRate / 1200.0 * this.loanAmountOne) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
 
 	constructor() {
 
