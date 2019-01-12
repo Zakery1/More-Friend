@@ -44,6 +44,20 @@ export class PriceVariedDpComponent implements OnInit {
 	// tslint:disable-next-line:max-line-length
 	private pAndIFour = ((this.interestRate / 1200.0 * this.loanAmountFour) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
 
+	private mortgageInsuranceOne = ((this.purchasePriceOne - this.downPaymentOne ) * this.miPercentage / 1200).toFixed(2);
+	private mortgageInsuranceTwo = ((this.purchasePriceTwo - this.downPaymentTwo ) * this.miPercentage / 1200).toFixed(2);
+	private mortgageInsuranceThree = ((this.purchasePriceThree - this.downPaymentThree ) * this.miPercentage / 1200).toFixed(2);
+	private mortgageInsuranceFour = ((this.purchasePriceFour - this.downPaymentFour ) * this.miPercentage / 1200).toFixed(2);
+
+	private estimatedPTOne = (this.purchasePriceOne * this.estimatedTaxes / 1200).toFixed(2);
+	private estimatedPTTwo = (this.purchasePriceTwo * this.estimatedTaxes / 1200).toFixed(2);
+	private estimatedPTThree = (this.purchasePriceThree * this.estimatedTaxes / 1200).toFixed(2);
+	private estimatedPTFour = (this.purchasePriceFour * this.estimatedTaxes / 1200).toFixed(2);
+
+	private estimatedHIOne = (this.purchasePriceOne * this.estimateHOI / 1200).toFixed(2);
+	private estimatedHITwo = (this.purchasePriceTwo * this.estimateHOI / 1200).toFixed(2);
+	private estimatedHIThree = (this.purchasePriceThree * this.estimateHOI / 1200).toFixed(2);
+	private estimatedHIFour = (this.purchasePriceFour * this.estimateHOI / 1200).toFixed(2);
 
 	constructor() {
 
