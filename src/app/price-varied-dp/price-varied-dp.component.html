@@ -70,7 +70,7 @@
 	<h4>Loan Officer Input</h4>
 	<br>
 	<div class="loi">
-		<p class="input-line">Down Payment %<input (input)="updateDP()" [(ngModel)]="downPaymentPercentage" type="number"></p>
+		<p class="input-line">Down Payment %<input [(ngModel)]="downPaymentPercentage" type="number"></p>
 		<p class="input-line">Upfront MI/FF (%)<input [(ngModel)]="upfrontMiFf" type="number"></p>
 		<p class="input-line">Annual MI Percentage (%)<input [(ngModel)]="miPercentage" type="number"></p>
 		<p class="input-line">Estimated Taxes (%)<input [(ngModel)]="estimatedTaxes" type="number"></p>
@@ -81,5 +81,6 @@
 		<p class="input-line">Purchase Price #2<input [(ngModel)]="purchasePriceTwo" type="number"></p>
 		<p class="input-line">Purchase Price #3<input [(ngModel)]="purchasePriceThree" type="number"></p>
 		<p class="input-line">Purchase Price #4<input [(ngModel)]="purchasePriceFour" type="number"></p>
+		<button (click)="update()">Update</button>
 	</div>
 </div>
