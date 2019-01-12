@@ -70,7 +70,7 @@
 	<h4>Loan Officer Input</h4>
 	<br>
 	<div class="loi">
-		<p class="input-line">Down Payment %<input [(ngModel)]="downPaymentPercentage" type="number"></p>
+		<p class="input-line">Down Payment %<input (input)="updateDP()" [(ngModel)]="downPaymentPercentage" type="number"></p>
 		<p class="input-line">Upfront MI/FF (%)<input [(ngModel)]="upfrontMiFf" type="number"></p>
 		<p class="input-line">Annual MI Percentage (%)<input [(ngModel)]="miPercentage" type="number"></p>
 		<p class="input-line">Estimated Taxes (%)<input [(ngModel)]="estimatedTaxes" type="number"></p>
