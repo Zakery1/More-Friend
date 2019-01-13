@@ -71,20 +71,19 @@
 	<br>
 	<div class="loi">
 
-		<p *ngIf="dpPercentage" class="input-line">Down Payment %<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>
-		<p *ngIf="!dpPercentage" class="input-line">Down Payment $<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>
-		<button *ngIf="dpPercentage" (click)=switchDPPercentage()>Use Dollar Amount</button>
-		<button *ngIf="!dpPercentage" (click)=switchDPPercentage()>Use Percentage</button>
+		<p *ngIf="dpPercentage" class="input-line">Down Payment %<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"><button (click)=switchDPPercentage()>Use Dollar Amount</button></p>
+		<p *ngIf="!dpPercentage" class="input-line">Down Payment $<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"><button (click)=switchDPPercentage()>Use Percentage</button></p>
 		
 		<p class="input-line">Upfront MI/FF (%)<input (input)="update()" [(ngModel)]="upfrontMiFf" type="number"></p>
 		<p class="input-line">Annual MI Percentage (%)<input (input)="update()" [(ngModel)]="miPercentage" type="number"></p>
 
-		<p *ngIf="eTPercentage" class="input-line">Estimated Taxes (%)<input (input)="update()" [(ngModel)]="estimatedTaxes" type="number"></p>
-		<p *ngIf="!eTPercentage" class="input-line">Estimated Taxes ($)<input (input)="update()" [(ngModel)]="estimatedTaxes" type="number"></p>
-		<button *ngIf="eTPercentage" (click)=switchETPercentage()>Use Dollar Amount</button>
-		<button *ngIf="!eTPercentage" (click)=switchETPercentage()>Use Percentage</button>
+		<p *ngIf="eTPercentage" class="input-line">Estimated Taxes (%)<input (input)="update()" [(ngModel)]="estimatedTaxes" type="number"><button (click)=switchETPercentage()>Use Dollar Amount</button></p>
+		<p *ngIf="!eTPercentage" class="input-line">Estimated Taxes ($)<input (input)="update()" [(ngModel)]="estimatedTaxes" type="number"><button (click)=switchETPercentage()>Use Percentage</button></p>
 
-		<p class="input-line">Estimates HOI (%)<input (input)="update()" [(ngModel)]="estimateHOI" type="number"></p>
+		<p *ngIf="eHOIPercentage" class="input-line">Estimates HOI (%)<input (input)="update()" [(ngModel)]="estimateHOI" type="number"><button (click)="switcheHOIPercentage()">Use Dollar Amount</button></p>
+		<p *ngIf="!eHOIPercentage" class="input-line">Estimates HOI ($)<input (input)="update()" [(ngModel)]="estimateHOI" type="number"><button (click)="switcheHOIPercentage()">Use Percentage</button></p>
+		
+		
 		<p class="input-line">Interest Rate (%)<input (input)="update()" [(ngModel)]="interestRate" type="number"></p>
 		<p class="input-line">Length of Mortgage (Years)<input (input)="update()" [(ngModel)]="mortgageYears" type="number"></p>
 		<p class="input-line">Purchase Price #1<input (input)="update()" [(ngModel)]="purchasePriceOne" type="number"></p>

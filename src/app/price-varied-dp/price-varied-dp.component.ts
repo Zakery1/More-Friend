@@ -68,6 +68,10 @@ export class PriceVariedDpComponent implements OnInit {
 		this.eTPercentage = !this.eTPercentage;
 	}
 
+	private switcheHOIPercentage() {
+		this.eHOIPercentage = !this.eHOIPercentage;
+	}
+
 	private update() {
 		this.downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
 		this.downPaymentTwo = (this.purchasePriceTwo * this.downPaymentPercentage) / 100;
