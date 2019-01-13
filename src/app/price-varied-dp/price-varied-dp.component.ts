@@ -63,10 +63,16 @@ export class PriceVariedDpComponent implements OnInit {
 	private switchDPPercentage() {
 		this.dpPercentage = !this.dpPercentage;
 		if (this.dpPercentage === false) {
-			this.downPaymentOne = this.downPaymentPercentage;
-			this.downPaymentTwo = this.downPaymentPercentage;
-			this.downPaymentThree = this.downPaymentPercentage;
-			this.downPaymentFour = this.downPaymentPercentage;
+			this.downPaymentOne = this.downPaymentTwo = this.downPaymentThree = this.downPaymentFour = this.downPaymentPercentage;
+			console.log(this.downPaymentOne, this.downPaymentTwo, this.downPaymentThree, this.downPaymentFour);
+			// this.downPaymentOne = this.downPaymentPercentage;
+			// this.downPaymentOne = this.downPaymentPercentage;
+			// this.downPaymentOne = this.downPaymentPercentage;
+			this.loanAmountOne = (this.purchasePriceOne - this.downPaymentPercentage) * (100 + this.upfrontMiFf) / 100;
+			this.loanAmountTwo = (this.purchasePriceTwo - this.downPaymentPercentage) * (100 + this.upfrontMiFf) / 100;
+			this.loanAmountThree = (this.purchasePriceThree - this.downPaymentPercentage) * (100 + this.upfrontMiFf) / 100;
+			this.loanAmountFour = (this.purchasePriceFour - this.downPaymentPercentage) * (100 + this.upfrontMiFf) / 100;
+
 		} else {
 			this.downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
 			this.downPaymentTwo = (this.purchasePriceTwo * this.downPaymentPercentage) / 100;
