@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PriceVariedDpComponent implements OnInit {
 
+	private dpPercentage = true;
+	private eTPercentage = true;
+	private eHOIPercentage = true;
+
 	private purchasePriceOne = 225000;
 	private purchasePriceTwo = 250000;
 	private purchasePriceThree = 275000;
@@ -55,6 +59,14 @@ export class PriceVariedDpComponent implements OnInit {
 	private estimatedHITwo = (this.purchasePriceTwo * this.estimateHOI / 1200).toFixed(2);
 	private estimatedHIThree = (this.purchasePriceThree * this.estimateHOI / 1200).toFixed(2);
 	private estimatedHIFour = (this.purchasePriceFour * this.estimateHOI / 1200).toFixed(2);
+
+	private switchDPPercentage() {
+		this.dpPercentage = !this.dpPercentage;
+	}
+
+	private switchETPercentage() {
+		this.eTPercentage = !this.eTPercentage;
+	}
 
 	private update() {
 		this.downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
