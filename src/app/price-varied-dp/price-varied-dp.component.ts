@@ -69,7 +69,6 @@ export class PriceVariedDpComponent implements OnInit {
 			this.loanAmountTwo = (this.purchasePriceTwo - this.downPaymentPercentage) * (100 + this.upfrontMiFf) / 100;
 			this.loanAmountThree = (this.purchasePriceThree - this.downPaymentPercentage) * (100 + this.upfrontMiFf) / 100;
 			this.loanAmountFour = (this.purchasePriceFour - this.downPaymentPercentage) * (100 + this.upfrontMiFf) / 100;
-			console.log(this.loanAmountOne, this.loanAmountTwo, this.loanAmountThree, this.loanAmountFour);
 			// tslint:disable-next-line:max-line-length
 			this.pAndIOne = ((this.interestRate / 1200.0 * this.loanAmountOne) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
 			console.log(this.pAndIOne);
