@@ -65,25 +65,24 @@
 				<div class="display-pprices">${{estimatedHIFour}}</div>
 			</div>
 		</div>
+		<div class="ppc">
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Est Total Payment</div>
+				<div class="display-pprices">${{estimatedHIOne}}</div>
+				<div class="display-pprices">${{estimatedHITwo}}</div>
+				<div class="display-pprices">${{estimatedHIThree}}</div>
+				<div class="display-pprices">${{estimatedHIFour}}</div>
+			</div>
+		</div>
 	</div>
 	<br>
 	<h4>Loan Officer Input</h4>
 	<br>
 	<div class="loi">
-
-		<p *ngIf="dpPercentage" class="input-line">Down Payment %<input [(ngModel)]="downPaymentPercentage" type="number"><button (click)=switchDPPercentage()>Use Dollar Amount</button></p>
-		<p *ngIf="!dpPercentage" class="input-line">Down Payment $<input [(ngModel)]="downPaymentPercentage" type="number"><button (click)=switchDPPercentage()>Use Percentage</button></p>
-		
+		<p class="input-line">Down Payment (%)<input [(ngModel)]="downPaymentPercentage" type="number"></p>		
 		<p class="input-line">Upfront MI/FF (%)<input [(ngModel)]="upfrontMiFf" type="number"></p>
 		<p class="input-line">Annual MI Percentage (%)<input [(ngModel)]="miPercentage" type="number"></p>
-
-		<p *ngIf="eTPercentage" class="input-line">Estimated Taxes (%)<input [(ngModel)]="estimatedTaxes" type="number"><button (click)=switchETPercentage()>Use Dollar Amount</button></p>
-		<p *ngIf="!eTPercentage" class="input-line">Estimated Taxes ($)<input [(ngModel)]="estimatedTaxes" type="number"><button (click)=switchETPercentage()>Use Percentage</button></p>
-
-		<p *ngIf="eHOIPercentage" class="input-line">Estimates HOI (%)<input [(ngModel)]="estimateHOI" type="number"><button (click)="switcheHOIPercentage()">Use Dollar Amount</button></p>
-		<p *ngIf="!eHOIPercentage" class="input-line">Estimates HOI ($)<input [(ngModel)]="estimateHOI" type="number"><button (click)="switcheHOIPercentage()">Use Percentage</button></p>
-		
-		
+		<p class="input-line">Estimated Taxes (%)<input [(ngModel)]="estimatedTaxes" type="number"></p>
 		<p class="input-line">Interest Rate (%)<input [(ngModel)]="interestRate" type="number"></p>
 		<p class="input-line">Length of Mortgage (Years)<input [(ngModel)]="mortgageYears" type="number"></p>
 		<p class="input-line">Purchase Price #1<input [(ngModel)]="purchasePriceOne" type="number"></p>
@@ -91,5 +90,5 @@
 		<p class="input-line">Purchase Price #3<input [(ngModel)]="purchasePriceThree" type="number"></p>
 		<p class="input-line">Purchase Price #4<input [(ngModel)]="purchasePriceFour" type="number"></p>
 	</div>
-	<button (click)="update()">Update</button>
+	<button (click)="update()">Recalculate</button>
 </div>
