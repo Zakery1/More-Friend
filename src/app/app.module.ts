@@ -8,6 +8,7 @@ import { PriceVariedDpComponent } from './price-varied-dp/price-varied-dp.compon
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PriceVariedExactDpComponent } from './price-varied-exact-dp/price-varied-exact-dp.component';
 import { PriceOnePropDpComponent } from './price-one-prop-dp/price-one-prop-dp.component';
+import { PriceOnePropExactComponent } from './price-one-prop-exact/price-one-prop-exact.component';
 
 @NgModule({
 	declarations: [
@@ -16,7 +17,8 @@ import { PriceOnePropDpComponent } from './price-one-prop-dp/price-one-prop-dp.c
 		PriceVariedDpComponent,
 		DashboardComponent,
 		PriceVariedExactDpComponent,
-		PriceOnePropDpComponent
+		PriceOnePropDpComponent,
+		PriceOnePropExactComponent
 	],
 	imports: [
 		BrowserModule,
