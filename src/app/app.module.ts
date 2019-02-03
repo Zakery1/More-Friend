@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PriceVariedDpComponent } from './price-varied-dp/price-varied-dp.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PriceVariedExactDpComponent } from './price-varied-exact-dp/price-varied-exact-dp.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		NavbarComponent,
 		PriceVariedDpComponent,
-		DashboardComponent
+		DashboardComponent,
+		PriceVariedExactDpComponent
 	],
 	imports: [
 		BrowserModule,
