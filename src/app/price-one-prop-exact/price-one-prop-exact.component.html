@@ -1,3 +1,95 @@
-<p>
-  price-one-prop-exact works!
-</p>
+<div class="pvdp-main">
+	<h3>Purchase Price Comparison</h3>
+	<div class="ppc-top">
+		<div class="ppc">
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Purchase Price</div>
+				<div class="display-pprices">${{purchasePriceOne}}</div>
+				<div class="display-pprices">${{purchasePriceTwo}}</div>
+				<div class="display-pprices">${{purchasePriceThree}}</div>
+				<div class="display-pprices">${{purchasePriceFour}}</div>
+			</div>
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Down Payment</div>
+				<div class="display-pprices">${{downPayment}}</div>
+				<div class="display-pprices">${{downPayment}}</div>
+				<div class="display-pprices">${{downPayment}}</div>
+				<div class="display-pprices">${{downPayment}}</div>
+			</div>
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Loan Amount</div>
+				<div class="display-pprices">${{loanAmountOne}}</div>
+				<div class="display-pprices">${{loanAmountTwo}}</div>
+				<div class="display-pprices">${{loanAmountThree}}</div>
+				<div class="display-pprices">${{loanAmountFour}}</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<h4>Monthly Payments Shown Below</h4>
+	<br>
+	<div class="mp">
+		<div class="ppc">
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Principal and Interest</div>
+				<div class="display-pprices">${{pAndIOne}}</div>
+				<div class="display-pprices">${{pAndITwo}}</div>
+				<div class="display-pprices">${{pAndIThree}}</div>
+				<div class="display-pprices">${{pAndIFour}}</div>
+			</div>
+		</div>
+		<div class="ppc">
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Mortgage Insurance</div>
+				<div class="display-pprices">${{mortgageInsuranceOne}}</div>
+				<div class="display-pprices">${{mortgageInsuranceTwo}}</div>
+				<div class="display-pprices">${{mortgageInsuranceThree}}</div>
+				<div class="display-pprices">${{mortgageInsuranceFour}}</div>
+			</div>
+		</div>
+		<div class="ppc">
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Est Property Taxes</div>
+				<div class="display-pprices">${{estimatedPTOne}}</div>
+				<div class="display-pprices">${{estimatedPTTwo}}</div>
+				<div class="display-pprices">${{estimatedPTThree}}</div>
+				<div class="display-pprices">${{estimatedPTFour}}</div>
+			</div>
+		</div>
+		<div class="ppc">
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Est Home Insurance</div>
+				<div class="display-pprices">${{estimatedHIOne}}</div>
+				<div class="display-pprices">${{estimatedHITwo}}</div>
+				<div class="display-pprices">${{estimatedHIThree}}</div>
+				<div class="display-pprices">${{estimatedHIFour}}</div>
+			</div>
+		</div>
+		<div class="ppc">
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Est Total Payment</div>
+				<div class="display-pprices">${{estimatedPaymentOne}}</div>
+				<div class="display-pprices">${{estimatedPaymentTwo}}</div>
+				<div class="display-pprices">${{estimatedPaymentThree}}</div>
+				<div class="display-pprices">${{estimatedPaymentFour}}</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<h4>Loan Officer Input</h4>
+	<br>
+	<div class="loi">
+		<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPayment" type="number"></p>		
+		<p class="input-line">Upfront MI/FF (%)<input (input)="update()" [(ngModel)]="upfrontMiFf" type="number"></p>
+		<p class="input-line">Annual MI Percentage (%)<input (input)="update()" [(ngModel)]="miPercentage" type="number"></p>
+		<p class="input-line">Estimated Taxes (%)<input (input)="update()" [(ngModel)]="estimatedTaxes" type="number"></p>
+		<p class="input-line">Estimated HOI (%)<input (input)="update()" [(ngModel)]="estimateHOI" type="number"></p>
+		<p class="input-line">Interest Rate (%)<input (input)="update()" [(ngModel)]="interestRate" type="number"></p>
+		<p class="input-line">Length of Mortgage (Years)<input (input)="update()" [(ngModel)]="mortgageYears" type="number"></p>
+		<p class="input-line">Purchase Price #1<input (input)="update()" [(ngModel)]="purchasePriceOne" type="number"></p>
+		<p class="input-line">Purchase Price #2<input (input)="update()" [(ngModel)]="purchasePriceTwo" type="number"></p>
+		<p class="input-line">Purchase Price #3<input (input)="update()" [(ngModel)]="purchasePriceThree" type="number"></p>
+		<p class="input-line">Purchase Price #4<input (input)="update()" [(ngModel)]="purchasePriceFour" type="number"></p>
+	</div>
+	<button (click)="toOriginal()">Revert to Original Values</button>
+</div>
