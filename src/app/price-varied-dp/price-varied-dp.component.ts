@@ -8,10 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PriceVariedDpComponent implements OnInit {
 
-	// private dpPercentage = true;
-	// private eTPercentage = true;
-	// private eHOIPercentage = true;
-
 	private purchasePriceOne = 225000;
 	private purchasePriceTwo = 250000;
 	private purchasePriceThree = 275000;
