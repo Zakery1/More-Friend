@@ -13,7 +13,7 @@ export class PriceOnePropDpComponent implements OnInit {
 	private purchasePriceFour = 300000;
 
 	private downPaymentPercentage = 3.5;
-	private upfrontMiFf = 1.5;
+	private upfrontMiFf = 6;
 	private miPercentage = 0.59;
 	private estimatedTaxes = 70;
 	private estimateHOI = 83.33;
