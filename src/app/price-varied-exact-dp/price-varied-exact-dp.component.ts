@@ -108,7 +108,7 @@ export class PriceVariedExactDpComponent implements OnInit {
 		this.downPayment = 20000;
 		this.update();
 	}
-
+	
 	constructor() { }
 
 	ngOnInit() {
