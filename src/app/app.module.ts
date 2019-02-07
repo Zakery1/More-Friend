@@ -10,6 +10,7 @@ import { PriceVariedExactDpComponent } from './price-varied-exact-dp/price-varie
 import { PriceOnePropDpComponent } from './price-one-prop-dp/price-one-prop-dp.component';
 import { PriceOnePropExactComponent } from './price-one-prop-exact/price-one-prop-exact.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProgramDpComponent } from './program-dp/program-dp.component';
 
 @NgModule({
 	declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
 		PriceVariedExactDpComponent,
 		PriceOnePropDpComponent,
 		PriceOnePropExactComponent,
-		FooterComponent
+		FooterComponent,
+		ProgramDpComponent
 	],
 	imports: [
 		BrowserModule,
