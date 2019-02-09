@@ -18,6 +18,7 @@ export class ProgramDpComponent implements OnInit {
 	private miPercentage = 0;
 	private estimatedTaxes = 166;
 	private estimateHOI = 40;
+
 	private interestRateOne = 4.75;
 	private interestRateTwo = 4.625;
 	private interestRateThree = 4.625;
@@ -108,12 +109,19 @@ export class ProgramDpComponent implements OnInit {
 
 	private toOriginal() {
 		this.purchasePrice = 340000;
-		this.downPaymentPercentage = 5;
+		this.downPaymentPercentageOne = 20;
+		this.downPaymentPercentageTwo = 25;
+		this.downPaymentPercentageThree = 30;
+		this.downPaymentPercentageFour = 40;
 		this.upfrontMiFf = 1.75;
 		this.miPercentage = 0.85;
 		this.estimatedTaxes = 0.8;
 		this.estimateHOI = 0.35;
-		this.interestRate = 4.125;
+		this.interestRateOne = 4.75;
+		this.interestRateTwo = 4.625;
+		this.interestRateThree = 4.625;
+		this.interestRateFour = 4.5;
+		this.mortgageYears = 30;
 		this.mortgageYears = 30;
 		this.update();
 	}
