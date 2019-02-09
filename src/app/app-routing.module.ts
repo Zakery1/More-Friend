@@ -7,6 +7,8 @@ import { PriceOnePropDpComponent } from './modules/situations/components/price-o
 import { PriceVariedExactDpComponent } from './modules/situations/components/price-varied-exact-dp/price-varied-exact-dp.component';
 import { PriceVariedDpComponent } from './modules/situations/components/price-varied-dp/price-varied-dp.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CashToCloseComponent } from './modules/situations/components/cash-to-close/cash-to-close.component';
+
 
 const routes: Routes = [
 	{ path: 'pvdp', component: PriceVariedDpComponent },
@@ -14,6 +16,7 @@ const routes: Routes = [
 	{ path: 'programDP', component: ProgramDpComponent },
 	{ path: 'podp', component: PriceOnePropDpComponent },
 	{ path: 'podpE', component: PriceOnePropExactComponent},
+	{ path: 'cashTC', component: CashToCloseComponent},
 	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 	{ path: 'dashboard', component: DashboardComponent },
 ];
