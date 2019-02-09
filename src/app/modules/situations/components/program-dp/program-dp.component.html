@@ -23,6 +23,13 @@
 				<div class="display-pprices">${{loanAmountThree}}</div>
 				<div class="display-pprices">${{loanAmountFour}}</div>
 			</div>
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Interest Rate</div>
+				<div class="display-pprices">{{interestRateOne}}</div>
+				<div class="display-pprices">{{interestRateTwo}}</div>
+				<div class="display-pprices">{{interestRateThree}}</div>
+				<div class="display-pprices">{{interestRateFour}}</div>
+			</div>
 		</div>
 	</div>
 	<br>
@@ -86,7 +93,7 @@
 	<div class="loi-top">
 		<div class="loi">
 			<div class="display-prices">Scenario #1</div>
-			<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>		
+			<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentageOne" type="number"></p>		
 			<p class="input-line">Upfront MI/FF (%)<input (input)="update()" [(ngModel)]="upfrontMiFf" type="number"></p>
 			<p class="input-line">Annual MI Percentage (%)<input (input)="update()" [(ngModel)]="miPercentage" type="number"></p>
 			<p class="input-line">Interest Rate (%)<input (input)="update()" [(ngModel)]="interestRate" type="number"></p>
@@ -94,7 +101,7 @@
 		</div>
 		<div class="loi">
 				<div class="display-prices">Scenario #2</div>
-			<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>		
+			<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentageTwo" type="number"></p>		
 			<p class="input-line">Upfront MI/FF (%)<input (input)="update()" [(ngModel)]="upfrontMiFf" type="number"></p>
 			<p class="input-line">Annual MI Percentage (%)<input (input)="update()" [(ngModel)]="miPercentage" type="number"></p>
 			<p class="input-line">Interest Rate (%)<input (input)="update()" [(ngModel)]="interestRate" type="number"></p>
@@ -104,7 +111,7 @@
 	<div class="loi-top">
 			<div class="loi">
 				<div class="display-prices">Scenario #3</div>
-				<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>		
+				<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentageThree" type="number"></p>		
 				<p class="input-line">Upfront MI/FF (%)<input (input)="update()" [(ngModel)]="upfrontMiFf" type="number"></p>
 				<p class="input-line">Annual MI Percentage (%)<input (input)="update()" [(ngModel)]="miPercentage" type="number"></p>
 				<p class="input-line">Interest Rate (%)<input (input)="update()" [(ngModel)]="interestRate" type="number"></p>
@@ -112,7 +119,7 @@
 			</div>
 			<div class="loi">
 				<div class="display-prices">Scenario #4</div>
-				<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>		
+				<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentageFour" type="number"></p>		
 				<p class="input-line">Upfront MI/FF (%)<input (input)="update()" [(ngModel)]="upfrontMiFf" type="number"></p>
 				<p class="input-line">Annual MI Percentage (%)<input (input)="update()" [(ngModel)]="miPercentage" type="number"></p>
 				<p class="input-line">Interest Rate (%)<input (input)="update()" [(ngModel)]="interestRate" type="number"></p>
