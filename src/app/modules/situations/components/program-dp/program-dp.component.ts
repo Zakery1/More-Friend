@@ -14,7 +14,10 @@ export class ProgramDpComponent implements OnInit {
 	private downPaymentPercentageThree = 30;
 	private downPaymentPercentageFour = 40;
 
-	private upfrontMiFf = 0;
+	private upfrontMiFfOne = 0;
+	private upfrontMiFfTwo = 0;
+	private upfrontMiFfThree = 0;
+	private upfrontMiFfFour = 0;
 	private miPercentage = 0;
 	private estimatedTaxes = 166;
 	private estimateHOI = 40;
@@ -30,10 +33,10 @@ export class ProgramDpComponent implements OnInit {
 	private downPaymentThree = (this.purchasePrice * this.downPaymentPercentageThree) / 100;
 	private downPaymentFour = (this.purchasePrice * this.downPaymentPercentageFour) / 100;
 
-	private loanAmountOne = (((this.purchasePrice - this.downPaymentOne)) * (1 + (this.upfrontMiFf / 100))).toFixed(2);
-	private loanAmountTwo = (((this.purchasePrice - this.downPaymentTwo)) * (1 + (this.upfrontMiFf / 100))).toFixed(2);
-	private loanAmountThree = (((this.purchasePrice - this.downPaymentThree)) * (1 + (this.upfrontMiFf / 100))).toFixed(2);
-	private loanAmountFour = (((this.purchasePrice - this.downPaymentFour)) * (1 + (this.upfrontMiFf / 100))).toFixed(2);
+	private loanAmountOne = (((this.purchasePrice - this.downPaymentOne)) * (1 + (this.upfrontMiFfOne / 100))).toFixed(2);
+	private loanAmountTwo = (((this.purchasePrice - this.downPaymentTwo)) * (1 + (this.upfrontMiFfTwo / 100))).toFixed(2);
+	private loanAmountThree = (((this.purchasePrice - this.downPaymentThree)) * (1 + (this.upfrontMiFfThree / 100))).toFixed(2);
+	private loanAmountFour = (((this.purchasePrice - this.downPaymentFour)) * (1 + (this.upfrontMiFfFour / 100))).toFixed(2);
 
 	// tslint:disable-next-line:max-line-length
 	private pAndIOne = ((this.interestRateOne / 1200.0 * +this.loanAmountOne) / (1.0 - Math.pow(1.0 + this.interestRateOne / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
@@ -71,10 +74,10 @@ export class ProgramDpComponent implements OnInit {
 		this.downPaymentThree = (this.purchasePrice * this.downPaymentPercentageThree) / 100;
 		this.downPaymentFour = (this.purchasePrice * this.downPaymentPercentageFour) / 100;
 
-		this.loanAmountOne = (((this.purchasePrice - this.downPaymentOne)) * (1 + (this.upfrontMiFf / 100))).toFixed(2);
-		this.loanAmountTwo = (((this.purchasePrice - this.downPaymentTwo)) * (1 + (this.upfrontMiFf / 100))).toFixed(2);
-		this.loanAmountThree = (((this.purchasePrice - this.downPaymentThree)) * (1 + (this.upfrontMiFf / 100))).toFixed(2);
-		this.loanAmountFour = (((this.purchasePrice - this.downPaymentFour)) * (1 + (this.upfrontMiFf / 100))).toFixed(2);
+		this.loanAmountOne = (((this.purchasePrice - this.downPaymentOne)) * (1 + (this.upfrontMiFfOne / 100))).toFixed(2);
+		this.loanAmountTwo = (((this.purchasePrice - this.downPaymentTwo)) * (1 + (this.upfrontMiFfTwo / 100))).toFixed(2);
+		this.loanAmountThree = (((this.purchasePrice - this.downPaymentThree)) * (1 + (this.upfrontMiFfThree / 100))).toFixed(2);
+		this.loanAmountFour = (((this.purchasePrice - this.downPaymentFour)) * (1 + (this.upfrontMiFfFour / 100))).toFixed(2);
 
 		// tslint:disable-next-line:max-line-length
 		this.pAndIOne = ((this.interestRateOne / 1200.0 * +this.loanAmountOne) / (1.0 - Math.pow(1.0 + this.interestRateOne / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
@@ -113,7 +116,10 @@ export class ProgramDpComponent implements OnInit {
 		this.downPaymentPercentageTwo = 25;
 		this.downPaymentPercentageThree = 30;
 		this.downPaymentPercentageFour = 40;
-		this.upfrontMiFf = 1.75;
+		this.upfrontMiFfOne = 0;
+		this.upfrontMiFfOne = 0;
+		this.upfrontMiFfOne = 0;
+		this.upfrontMiFfOne = 0;
 		this.miPercentage = 0.85;
 		this.estimatedTaxes = 0.8;
 		this.estimateHOI = 0.35;
