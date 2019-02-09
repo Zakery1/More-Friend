@@ -29,7 +29,11 @@ export class ProgramDpComponent implements OnInit {
 	private interestRateTwo = 4.625;
 	private interestRateThree = 4.625;
 	private interestRateFour = 4.5;
-	private mortgageYears = 30;
+
+	private mortgageYearsOne = 30;
+	private mortgageYearsTwo = 30;
+	private mortgageYearsThree = 30;
+	private mortgageYearsFour = 30;
 
 	private downPaymentOne = (this.purchasePrice * this.downPaymentPercentageOne) / 100;
 	private downPaymentTwo = (this.purchasePrice * this.downPaymentPercentageTwo) / 100;
@@ -42,13 +46,13 @@ export class ProgramDpComponent implements OnInit {
 	private loanAmountFour = (((this.purchasePrice - this.downPaymentFour)) * (1 + (this.upfrontMiFfFour / 100))).toFixed(2);
 
 	// tslint:disable-next-line:max-line-length
-	private pAndIOne = ((this.interestRateOne / 1200.0 * +this.loanAmountOne) / (1.0 - Math.pow(1.0 + this.interestRateOne / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+	private pAndIOne = ((this.interestRateOne / 1200.0 * +this.loanAmountOne) / (1.0 - Math.pow(1.0 + this.interestRateOne / 1200.00, -1.0 * this.mortgageYearsOne * 12))).toFixed(2);
 	// tslint:disable-next-line:max-line-length
-	private pAndITwo = ((this.interestRateTwo / 1200.0 * +this.loanAmountTwo) / (1.0 - Math.pow(1.0 + this.interestRateTwo / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+	private pAndITwo = ((this.interestRateTwo / 1200.0 * +this.loanAmountTwo) / (1.0 - Math.pow(1.0 + this.interestRateTwo / 1200.00, -1.0 * this.mortgageYearsTwo * 12))).toFixed(2);
 	// tslint:disable-next-line:max-line-length
-	private pAndIThree = ((this.interestRateThree / 1200.0 * +this.loanAmountThree) / (1.0 - Math.pow(1.0 + this.interestRateThree / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+	private pAndIThree = ((this.interestRateThree / 1200.0 * +this.loanAmountThree) / (1.0 - Math.pow(1.0 + this.interestRateThree / 1200.00, -1.0 * this.mortgageYearsThree * 12))).toFixed(2);
 	// tslint:disable-next-line:max-line-length
-	private pAndIFour = ((this.interestRateFour / 1200.0 * +this.loanAmountFour) / (1.0 - Math.pow(1.0 + this.interestRateFour / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+	private pAndIFour = ((this.interestRateFour / 1200.0 * +this.loanAmountFour) / (1.0 - Math.pow(1.0 + this.interestRateFour / 1200.00, -1.0 * this.mortgageYearsFour * 12))).toFixed(2);
 
 	private mortgageInsuranceOne = +((this.purchasePrice - this.downPaymentOne) * this.miPercentageOne / 1200).toFixed(2);
 	private mortgageInsuranceTwo = +((this.purchasePrice - this.downPaymentTwo) * this.miPercentageTwo / 1200).toFixed(2);
@@ -83,13 +87,13 @@ export class ProgramDpComponent implements OnInit {
 		this.loanAmountFour = (((this.purchasePrice - this.downPaymentFour)) * (1 + (this.upfrontMiFfFour / 100))).toFixed(2);
 
 		// tslint:disable-next-line:max-line-length
-		this.pAndIOne = ((this.interestRateOne / 1200.0 * +this.loanAmountOne) / (1.0 - Math.pow(1.0 + this.interestRateOne / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+		this.pAndIOne = ((this.interestRateOne / 1200.0 * +this.loanAmountOne) / (1.0 - Math.pow(1.0 + this.interestRateOne / 1200.00, -1.0 * this.mortgageYearsOne * 12))).toFixed(2);
 		// tslint:disable-next-line:max-line-length
-		this.pAndITwo = ((this.interestRateTwo / 1200.0 * +this.loanAmountTwo) / (1.0 - Math.pow(1.0 + this.interestRateTwo / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+		this.pAndITwo = ((this.interestRateTwo / 1200.0 * +this.loanAmountTwo) / (1.0 - Math.pow(1.0 + this.interestRateTwo / 1200.00, -1.0 * this.mortgageYearsTwo * 12))).toFixed(2);
 		// tslint:disable-next-line:max-line-length
-		this.pAndIThree = ((this.interestRateThree / 1200.0 * +this.loanAmountThree) / (1.0 - Math.pow(1.0 + this.interestRateThree / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+		this.pAndIThree = ((this.interestRateThree / 1200.0 * +this.loanAmountThree) / (1.0 - Math.pow(1.0 + this.interestRateThree / 1200.00, -1.0 * this.mortgageYearsThree * 12))).toFixed(2);
 		// tslint:disable-next-line:max-line-length
-		this.pAndIFour = ((this.interestRateFour / 1200.0 * +this.loanAmountFour) / (1.0 - Math.pow(1.0 + this.interestRateFour / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+		this.pAndIFour = ((this.interestRateFour / 1200.0 * +this.loanAmountFour) / (1.0 - Math.pow(1.0 + this.interestRateFour / 1200.00, -1.0 * this.mortgageYearsFour * 12))).toFixed(2);
 
 		this.mortgageInsuranceOne = +((this.purchasePrice - this.downPaymentOne) * this.miPercentageOne / 1200).toFixed(2);
 		this.mortgageInsuranceTwo = +((this.purchasePrice - this.downPaymentTwo) * this.miPercentageTwo / 1200).toFixed(2);
@@ -133,8 +137,10 @@ export class ProgramDpComponent implements OnInit {
 		this.interestRateTwo = 4.625;
 		this.interestRateThree = 4.625;
 		this.interestRateFour = 4.5;
-		this.mortgageYears = 30;
-		this.mortgageYears = 30;
+		this.mortgageYearsOne = 30;
+		this.mortgageYearsTwo = 30;
+		this.mortgageYearsThree = 30;
+		this.mortgageYearsFour = 30;
 		this.update();
 	}
 
