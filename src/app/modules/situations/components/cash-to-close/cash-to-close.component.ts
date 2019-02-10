@@ -13,7 +13,7 @@ export class CashToCloseComponent implements OnInit {
 	private sellerCredit = -5670;
 	private otherDPA = -7265;
 	private dailyInterest = 396;
-	private oneYearHI = 360000;
+	private oneYearHI = 360;
 	private prepaidITmE = 602;
 	private titleFees = 1650;
 	private countyRecordingFees = 40;
@@ -24,14 +24,20 @@ export class CashToCloseComponent implements OnInit {
 	private underwritingFee = 0;
 
 
-	private totalEstimatedClosingCosts = (this.underwritingFee + this.dailyInterest + 1)
+	// tslint:disable-next-line:max-line-length
+	private totalEstimatedClosingCosts = (this.underwritingFee + this.dailyInterest + this.oneYearHI + this.prepaidITmE + this.titleFees + this.countyRecordingFees + this.homeWarranty + this.prepaidHOADues + this.hOATransferFees + this.dPAAdminFee);
 
-		// private totalEstimatedCashToClose = (this.downPayment + closingC)
+	// tslint:disable-next-line:max-line-length
+	private totalEstimatedCashToClose = (this.downPayment + this.totalEstimatedClosingCosts + this.originationFC + this.earnestMoney + this.sellerCredit + this.otherDPA);
 
 
 		constructor() { }
 
 ngOnInit() {
+	// tslint:disable-next-line:max-line-length
+	console.log (this.underwritingFee, this.dailyInterest, this.oneYearHI, this.prepaidITmE, this.titleFees, this.countyRecordingFees, this.homeWarranty, this.prepaidHOADues, this.hOATransferFees, this.dPAAdminFee);
 }
+
+
 
 }
