@@ -9,6 +9,7 @@ import { PriceOnePropExactComponent } from './components/price-one-prop-exact/pr
 import { PriceVariedExactDpComponent } from './components/price-varied-exact-dp/price-varied-exact-dp.component';
 import { ProgramDpComponent } from './components/program-dp/program-dp.component';
 import { CashToCloseComponent } from './components/cash-to-close/cash-to-close.component';
+import { RateFeeCompPurchaseComponent } from './components/rate-fee-comp-purchase/rate-fee-comp-purchase.component';
 
 
 
@@ -19,7 +20,8 @@ import { CashToCloseComponent } from './components/cash-to-close/cash-to-close.c
 		PriceOnePropExactComponent,
 		PriceVariedExactDpComponent,
 		ProgramDpComponent,
-		CashToCloseComponent
+		CashToCloseComponent,
+		RateFeeCompPurchaseComponent
 	],
 	imports: [
 		CommonModule,

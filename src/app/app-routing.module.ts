@@ -1,3 +1,4 @@
+import { RateFeeCompPurchaseComponent } from './modules/situations/components/rate-fee-comp-purchase/rate-fee-comp-purchase.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
 	{ path: 'podp', component: PriceOnePropDpComponent },
 	{ path: 'podpE', component: PriceOnePropExactComponent},
 	{ path: 'cashTC', component: CashToCloseComponent},
+	{ path: 'rateFeeCompPurchase', component: RateFeeCompPurchaseComponent},
 	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 	{ path: 'dashboard', component: DashboardComponent },
 ];
