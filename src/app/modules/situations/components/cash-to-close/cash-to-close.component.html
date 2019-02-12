@@ -3,66 +3,66 @@
 	<div class="left-column">
 		<div class="left-column-child">
 			<h3>Est Cash to Close</h3>
-				<div class="l-r-parent">
-					<div class="l-r-child">Down Payment</div>
-					<div class="l-r-child">${{downPayment}}</div>
+			<div class="l-r-parent">
+				<div class="l-r-child">Down Payment</div>
+				<div class="l-r-child">${{downPayment}}</div>
+			</div>
+			<div class="l-r-parent">
+				<div class="l-r-child">
+					Closing Costs <br> (breakdown in below chart)
 				</div>
-				<div class="l-r-parent">
-					<div class="l-r-child">
-						Closing Costs <br> (breakdown in below chart)
-					</div>
-					<div class="l-r-child">
-						${{totalEstimatedClosingCosts}}
-					</div>
+				<div class="l-r-child">
+					${{totalEstimatedClosingCosts}}
 				</div>
-				<div class="l-r-parent">
-					<div class="l-r-child">
-						Origination Fee or (Credit)
-						<br>
-						(for your rate/loan option chosen)
-					</div>
-					<div class="l-r-child">
-						${{originationFC}}
-					</div>
+			</div>
+			<div class="l-r-parent">
+				<div class="l-r-child">
+					Origination Fee or (Credit)
+					<br>
+					(for your rate/loan option chosen)
 				</div>
-				<div class="l-r-parent">
-					<div class="l-r-child">
-						Earnist Money Already Paid
-					</div>
-					<div class="l-r-child">
-						${{earnestMoney}}
-					</div>
+				<div class="l-r-child">
+					${{originationFC}}
 				</div>
-				<div class="l-r-parent">
-					<div class="l-r-child">
-						Seller Credit 
-					</div>
-					<div class="l-r-child">
-						${{sellerCredit}}
-					</div>
+			</div>
+			<div class="l-r-parent">
+				<div class="l-r-child">
+					Earnist Money Already Paid
 				</div>
-				<div class="l-r-parent">
-					<div class="l-r-child">
-						Other (ei. DPA)
-					</div>
-					<div class="l-r-child">
-						${{otherDPA}}
-					</div>
+				<div class="l-r-child">
+					${{earnestMoney}}
 				</div>
-				<div class="l-r-parent">
-					<div class="l-r-child">
-						Total Estimated Cash to Close
-					</div>
-					<div class="l-r-child">
-						${{totalEstimatedCashToClose}}
-					</div>
+			</div>
+			<div class="l-r-parent">
+				<div class="l-r-child">
+					Seller Credit
 				</div>
+				<div class="l-r-child">
+					${{sellerCredit}}
+				</div>
+			</div>
+			<div class="l-r-parent">
+				<div class="l-r-child">
+					Other (ei. DPA)
+				</div>
+				<div class="l-r-child">
+					${{otherDPA}}
+				</div>
+			</div>
+			<div class="l-r-parent">
+				<div class="l-r-child">
+					Total Estimated Cash to Close
+				</div>
+				<div class="l-r-child">
+					${{totalEstimatedCashToClose}}
+				</div>
+			</div>
 		</div>
 		<div class="left-column-child">
 			<h3>Closing Cost Breakdown (from above)</h3>
 			<div class="l-r-parent">
 				<div class="l-r-child">
-						Processing/Underwriting Fee
+					Processing/Underwriting Fee
 				</div>
 				<div class="l-r-child">
 					${{underwritingFee}}
@@ -70,7 +70,7 @@
 			</div>
 			<div class="l-r-parent">
 				<div class="l-r-child">
-					Daily Interest 
+					Daily Interest
 				</div>
 				<div class="l-r-child">
 					${{dailyInterest}}
@@ -89,189 +89,109 @@
 					Prepaid Ins/Taxes – Escrow
 				</div>
 				<div class="l-r-child">
-						${{prepaidITmE}}
+					${{prepaidITmE}}
 				</div>
 			</div>
 			<div class="l-r-parent">
 				<div class="l-r-child">
-						Title Fees
+					Title Fees
 				</div>
 				<div class="l-r-child">
-						${{titleFees}}
-				</div>
-			</div>
-			<div class="l-r-parent">
-				<div class="l-r-child">
-						County Recording Fees
-				</div>
-				<div class="l-r-child">
-						${{countyRecordingFees}}
+					${{titleFees}}
 				</div>
 			</div>
 			<div class="l-r-parent">
 				<div class="l-r-child">
-						Home Warranty
+					County Recording Fees
 				</div>
 				<div class="l-r-child">
-						${{homeWarranty}}
-				</div>
-			</div>
-			<div class="l-r-parent">
-				<div class="l-r-child">
-						Prepaid HOA Dues
-				</div>
-				<div class="l-r-child">
-						${{prepaidHOADues}}
+					${{countyRecordingFees}}
 				</div>
 			</div>
 			<div class="l-r-parent">
 				<div class="l-r-child">
-						HOA Transfer Fees
+					Home Warranty
 				</div>
 				<div class="l-r-child">
-						${{hOATransferFees}}
-				</div>
-			</div>
-			<div class="l-r-parent">
-				<div class="l-r-child">
-						DPA Admin Fee
-				</div>
-				<div class="l-r-child">
-						${{dPAAdminFee}}
+					${{homeWarranty}}
 				</div>
 			</div>
 			<div class="l-r-parent">
 				<div class="l-r-child">
-						Total Estimated Closing Costs
+					Prepaid HOA Dues
 				</div>
 				<div class="l-r-child">
-						${{totalEstimatedClosingCosts}}
+					${{prepaidHOADues}}
+				</div>
+			</div>
+			<div class="l-r-parent">
+				<div class="l-r-child">
+					HOA Transfer Fees
+				</div>
+				<div class="l-r-child">
+					${{hOATransferFees}}
+				</div>
+			</div>
+			<div class="l-r-parent">
+				<div class="l-r-child">
+					DPA Admin Fee
+				</div>
+				<div class="l-r-child">
+					${{dPAAdminFee}}
+				</div>
+			</div>
+			<div class="l-r-parent">
+				<div class="l-r-child">
+					Total Estimated Closing Costs
+				</div>
+				<div class="l-r-child">
+					${{totalEstimatedClosingCosts}}
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="right-column">
 		<div class="right-column-child">
-		<h3>Loan Officer Input</h3>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						Down Payment
+			<h3>Loan Officer Input</h3>
+			<p class="input-line">Down Payment<input (input)="update()" [(ngModel)]="downPayment" type="number"></p>
+			<div class="l-r-parent">
+				<p class="input-line">Origination Fee/Credit<input (input)="update()" [(ngModel)]="originationFC" type="number"></p>
 			</div>
-			<div class="l-r-child">
-				${{downPayment}}
+			<div class="l-r-parent">
+				<p class="input-line">Earnest Money<input (input)="update()" [(ngModel)]="earnestMoney" type="number"></p>
 			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						Origination Fee/Credit
+			<div class="l-r-parent">
+				<p class="input-line">Earnest Money<input (input)="update()" [(ngModel)]="earnestMoney" type="number"></p>
 			</div>
-			<div class="l-r-child">
-						${{originationFC}}
+			<div class="l-r-parent">
+				<p class="input-line">Other (ie. DPA)<input (input)="update()" [(ngModel)]="otherDPA" type="number"></p>
 			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						Earnest Money
+			<div class="l-r-parent">
+				<p class="input-line">Daily Interest<input (input)="update()" [(ngModel)]="dailyInterest" type="number"></p>
 			</div>
-			<div class="l-r-child">
-						${{earnestMoney}}
+			<div class="l-r-parent">
+				<p class="input-line">1yr of Home Insurance<input (input)="update()" [(ngModel)]="oneYearHI" type="number"></p>
 			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-					Seller Credit
+			<div class="l-r-parent">
+				<p class="input-line">Prepaid Ins/Taxes-Escrow<input (input)="update()" [(ngModel)]="prepaidITmE" type="number"></p>
 			</div>
-			<div class="l-r-child">
-				${{sellerCredit}}
+			<div class="l-r-parent">
+				<p class="input-line">Title Fees<input (input)="update()" [(ngModel)]="titleFees" type="number"></p>
 			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						Other (ie. DPA)
+			<div class="l-r-parent">
+				<p class="input-line">County Recording Fees<input (input)="update()" [(ngModel)]="countyRecordingFees" type="number"></p>
 			</div>
-			<div class="l-r-child">
-						${{otherDPA}}
+			<div class="l-r-parent">
+				<p class="input-line">Home Warranty<input (input)="update()" [(ngModel)]="homeWarranty" type="number"></p>
 			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						Daily Interest
+			<div class="l-r-parent">
+				<p class="input-line">Prepaid HOA Dues<input (input)="update()" [(ngModel)]="prepaidHOADues" type="number"></p>
 			</div>
-			<div class="l-r-child">
-						${{dailyInterest}}
+			<div class="l-r-parent">
+				<p class="input-line">HOA Transfer Fees<input (input)="update()" [(ngModel)]="hOATransferFees" type="number"></p>
 			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						1yr of Home Insurnace
-			</div>
-			<div class="l-r-child">
-						${{oneYearHI}}
-			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						Prepaid Ins/Taxes - Escrow
-			</div>
-			<div class="l-r-child">
-						${{oneYearHI}}
-			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						Prepaid Ins/Taxes - Escrow
-			</div>
-			<div class="l-r-child">
-						${{prepaidITmE}}
-			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						Title Fees
-			</div>
-			<div class="l-r-child">
-						${{titleFees}}
-			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						County Recording Fees
-			</div>
-			<div class="l-r-child">
-						${{countyRecordingFees}}
-			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						Home Warranty
-			</div>
-			<div class="l-r-child">
-						${{homeWarranty}}
-			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						Prepaid HOA Dues
-			</div>
-			<div class="l-r-child">
-						${{prepaidHOADues}}
-			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						HOA Transfer Fees
-			</div>
-			<div class="l-r-child">
-						${{hOATransferFees}}
-			</div>
-		</div>
-		<div class="l-r-parent">
-			<div class="l-r-child">
-						DPA Admin Fee
-			</div>
-			<div class="l-r-child">
-						${{dPAAdminFee}}
+			<div class="l-r-parent">
+				<p class="input-line">DPA Admin Fee<input (input)="update()" [(ngModel)]="dPAAdminFee" type="number"></p>
 			</div>
 		</div>
 	</div>
-</div>
