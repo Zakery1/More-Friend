@@ -30,13 +30,38 @@ export class CashToCloseComponent implements OnInit {
 	// tslint:disable-next-line:max-line-length
 	private totalEstimatedCashToClose = (this.downPayment + this.totalEstimatedClosingCosts + this.originationFC + this.earnestMoney + this.sellerCredit + this.otherDPA);
 
+	update() {
+		// tslint:disable-next-line:max-line-length
+		this.totalEstimatedClosingCosts = (this.underwritingFee + this.dailyInterest + this.oneYearHI + this.prepaidITmE + this.titleFees + this.countyRecordingFees + this.homeWarranty + this.prepaidHOADues + this.hOATransferFees + this.dPAAdminFee);
 
-		constructor() { }
+		// tslint:disable-next-line:max-line-length
+		this.totalEstimatedCashToClose = (this.downPayment + this.totalEstimatedClosingCosts + this.originationFC + this.earnestMoney + this.sellerCredit + this.otherDPA);
+	}
 
-ngOnInit() {
-	// tslint:disable-next-line:max-line-length
-	console.log (this.underwritingFee, this.dailyInterest, this.oneYearHI, this.prepaidITmE, this.titleFees, this.countyRecordingFees, this.homeWarranty, this.prepaidHOADues, this.hOATransferFees, this.dPAAdminFee);
-}
+	revertToOriginal() {
+		this.downPayment = 6615;
+		this.originationFC = 3712;
+		this.earnestMoney = -1000;
+		this.sellerCredit = -5670;
+		this.otherDPA = -7265;
+		this.dailyInterest = 396;
+		this.oneYearHI = 360;
+		this.prepaidITmE = 602;
+		this.titleFees = 1650;
+		this.countyRecordingFees = 40;
+		this.homeWarranty = 500;
+		this.prepaidHOADues = 380;
+		this.hOATransferFees = 200;
+		this.dPAAdminFee = 1145;
+		this.underwritingFee = 0;
+		this.update();
+	}
+
+	constructor() { }
+
+	ngOnInit() {
+
+	}
 
 
 
