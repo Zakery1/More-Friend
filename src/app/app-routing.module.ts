@@ -7,7 +7,7 @@ import { PriceOnePropExactComponent } from './modules/situations/components/pric
 import { PriceOnePropDpComponent } from './modules/situations/components/price-one-prop-dp/price-one-prop-dp.component';
 import { PriceVariedExactDpComponent } from './modules/situations/components/price-varied-exact-dp/price-varied-exact-dp.component';
 import { PriceVariedDpComponent } from './modules/situations/components/price-varied-dp/price-varied-dp.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CashToCloseComponent } from './modules/situations/components/cash-to-close/cash-to-close.component';
 
 
