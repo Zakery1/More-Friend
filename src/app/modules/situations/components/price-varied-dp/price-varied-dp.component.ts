@@ -8,61 +8,61 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PriceVariedDpComponent implements OnInit {
 
-	private purchasePriceOne = 225000;
-	private purchasePriceTwo = 250000;
-	private purchasePriceThree = 275000;
-	private purchasePriceFour = 300000;
-	private downPaymentPercentage = 5;
+	public purchasePriceOne = 225000;
+	public purchasePriceTwo = 250000;
+	public purchasePriceThree = 275000;
+	public purchasePriceFour = 300000;
+	public downPaymentPercentage = 5;
 
-	private upfrontMiFf = 1.75;
-	private miPercentage = 0.85;
-	private estimatedTaxes = 0.8;
-	private estimateHOI = 0.35;
-	private interestRate = 4.125;
-	private mortgageYears = 30;
+	public upfrontMiFf = 1.75;
+	public miPercentage = 0.85;
+	public estimatedTaxes = 0.8;
+	public estimateHOI = 0.35;
+	public interestRate = 4.125;
+	public mortgageYears = 30;
 
 
-	private downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
-	private downPaymentTwo = (this.purchasePriceTwo * this.downPaymentPercentage) / 100;
-	private downPaymentThree = (this.purchasePriceThree * this.downPaymentPercentage) / 100;
-	private downPaymentFour = (this.purchasePriceFour * this.downPaymentPercentage) / 100;
+	public downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
+	public downPaymentTwo = (this.purchasePriceTwo * this.downPaymentPercentage) / 100;
+	public downPaymentThree = (this.purchasePriceThree * this.downPaymentPercentage) / 100;
+	public downPaymentFour = (this.purchasePriceFour * this.downPaymentPercentage) / 100;
 
-	private loanAmountOne = (this.purchasePriceOne * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
-	private loanAmountTwo = (this.purchasePriceTwo * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
-	private loanAmountThree = (this.purchasePriceThree * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
-	private loanAmountFour = (this.purchasePriceFour * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
+	public loanAmountOne = (this.purchasePriceOne * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
+	public loanAmountTwo = (this.purchasePriceTwo * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
+	public loanAmountThree = (this.purchasePriceThree * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
+	public loanAmountFour = (this.purchasePriceFour * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100;
 
 	// tslint:disable-next-line:max-line-length
-	private pAndIOne = ((this.interestRate / 1200.0 * this.loanAmountOne) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+	public pAndIOne = ((this.interestRate / 1200.0 * this.loanAmountOne) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
 	// tslint:disable-next-line:max-line-length
-	private pAndITwo = ((this.interestRate / 1200.0 * this.loanAmountTwo) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+	public pAndITwo = ((this.interestRate / 1200.0 * this.loanAmountTwo) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
 	// tslint:disable-next-line:max-line-length
-	private pAndIThree = ((this.interestRate / 1200.0 * this.loanAmountThree) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+	public pAndIThree = ((this.interestRate / 1200.0 * this.loanAmountThree) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
 	// tslint:disable-next-line:max-line-length
-	private pAndIFour = ((this.interestRate / 1200.0 * this.loanAmountFour) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
+	public pAndIFour = ((this.interestRate / 1200.0 * this.loanAmountFour) / (1.0 - Math.pow(1.0 + this.interestRate / 1200.00, -1.0 * this.mortgageYears * 12))).toFixed(2);
 
-	private mortgageInsuranceOne = +((this.purchasePriceOne - this.downPaymentOne) * this.miPercentage / 1200).toFixed(2);
-	private mortgageInsuranceTwo = +((this.purchasePriceTwo - this.downPaymentTwo) * this.miPercentage / 1200).toFixed(2);
-	private mortgageInsuranceThree = +((this.purchasePriceThree - this.downPaymentThree) * this.miPercentage / 1200).toFixed(2);
-	private mortgageInsuranceFour = +((this.purchasePriceFour - this.downPaymentFour) * this.miPercentage / 1200).toFixed(2);
+	public mortgageInsuranceOne = +((this.purchasePriceOne - this.downPaymentOne) * this.miPercentage / 1200).toFixed(2);
+	public mortgageInsuranceTwo = +((this.purchasePriceTwo - this.downPaymentTwo) * this.miPercentage / 1200).toFixed(2);
+	public mortgageInsuranceThree = +((this.purchasePriceThree - this.downPaymentThree) * this.miPercentage / 1200).toFixed(2);
+	public mortgageInsuranceFour = +((this.purchasePriceFour - this.downPaymentFour) * this.miPercentage / 1200).toFixed(2);
 
-	private estimatedPTOne = (this.purchasePriceOne * this.estimatedTaxes / 1200).toFixed(2);
-	private estimatedPTTwo = (this.purchasePriceTwo * this.estimatedTaxes / 1200).toFixed(2);
-	private estimatedPTThree = (this.purchasePriceThree * this.estimatedTaxes / 1200).toFixed(2);
-	private estimatedPTFour = (this.purchasePriceFour * this.estimatedTaxes / 1200).toFixed(2);
+	public estimatedPTOne = (this.purchasePriceOne * this.estimatedTaxes / 1200).toFixed(2);
+	public estimatedPTTwo = (this.purchasePriceTwo * this.estimatedTaxes / 1200).toFixed(2);
+	public estimatedPTThree = (this.purchasePriceThree * this.estimatedTaxes / 1200).toFixed(2);
+	public estimatedPTFour = (this.purchasePriceFour * this.estimatedTaxes / 1200).toFixed(2);
 
-	private estimatedHIOne = (this.purchasePriceOne * this.estimateHOI / 1200).toFixed(2);
-	private estimatedHITwo = (this.purchasePriceTwo * this.estimateHOI / 1200).toFixed(2);
-	private estimatedHIThree = (this.purchasePriceThree * this.estimateHOI / 1200).toFixed(2);
-	private estimatedHIFour = (this.purchasePriceFour * this.estimateHOI / 1200).toFixed(2);
+	public estimatedHIOne = (this.purchasePriceOne * this.estimateHOI / 1200).toFixed(2);
+	public estimatedHITwo = (this.purchasePriceTwo * this.estimateHOI / 1200).toFixed(2);
+	public estimatedHIThree = (this.purchasePriceThree * this.estimateHOI / 1200).toFixed(2);
+	public estimatedHIFour = (this.purchasePriceFour * this.estimateHOI / 1200).toFixed(2);
 
-	private estimatedPaymentOne = (+this.pAndIOne + +this.mortgageInsuranceOne + +this.estimatedPTOne + +this.estimatedHIOne).toFixed(2);
-	private estimatedPaymentTwo = (+this.pAndITwo + +this.mortgageInsuranceTwo + +this.estimatedPTTwo + +this.estimatedHITwo).toFixed(2);
+	public estimatedPaymentOne = (+this.pAndIOne + +this.mortgageInsuranceOne + +this.estimatedPTOne + +this.estimatedHIOne).toFixed(2);
+	public estimatedPaymentTwo = (+this.pAndITwo + +this.mortgageInsuranceTwo + +this.estimatedPTTwo + +this.estimatedHITwo).toFixed(2);
 		// tslint:disable-next-line:max-line-length
-	private estimatedPaymentThree = (+this.pAndIThree + +this.mortgageInsuranceThree + +this.estimatedPTThree + +this.estimatedHIThree).toFixed(2);
-	private estimatedPaymentFour = (+this.pAndIFour + +this.mortgageInsuranceFour + +this.estimatedPTFour + +this.estimatedHIFour).toFixed(2);
+	public estimatedPaymentThree = (+this.pAndIThree + +this.mortgageInsuranceThree + +this.estimatedPTThree + +this.estimatedHIThree).toFixed(2);
+	public estimatedPaymentFour = (+this.pAndIFour + +this.mortgageInsuranceFour + +this.estimatedPTFour + +this.estimatedHIFour).toFixed(2);
 
-	private update() {
+	public update() {
 		this.downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
 		this.downPaymentTwo = (this.purchasePriceTwo * this.downPaymentPercentage) / 100;
 		this.downPaymentThree = (this.purchasePriceThree * this.downPaymentPercentage) / 100;
@@ -105,7 +105,7 @@ export class PriceVariedDpComponent implements OnInit {
 		this.estimatedPaymentFour = (+this.pAndIFour + +this.mortgageInsuranceFour + +this.estimatedPTFour + +this.estimatedHIFour).toFixed(2);
 	}
 
-	private toOriginal() {
+	public toOriginal() {
 		this.purchasePriceOne = 225000;
 		this.purchasePriceTwo = 250000;
 		this.purchasePriceThree = 275000;
