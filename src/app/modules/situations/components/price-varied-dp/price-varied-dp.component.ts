@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+// services
+import { PurchasePricesService } from './../../../services/purchase-prices.service';
 
 @Component({
 	selector: 'app-price-varied-dp',
@@ -8,12 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PriceVariedDpComponent implements OnInit {
 
-	public purchasePriceOne = 225000;
-	public purchasePriceTwo = 250000;
-	public purchasePriceThree = 275000;
-	public purchasePriceFour = 300000;
-	public downPaymentPercentage = 5;
+	public purchasePriceOne: number;
+	public purchasePriceTwo: number;
+	public purchasePriceThree: number;
+	public purchasePriceFour: number;
 
+	constructor(private purchasePriceService: PurchasePricesService) {
+		this.purchasePriceOne = this.purchasePriceService.purchasePriceOne;
+		this.purchasePriceTwo = this.purchasePriceService.purchasePriceTwo;
+		this.purchasePriceThree = this.purchasePriceService.purchasePriceThree;
+		this.purchasePriceFour = this.purchasePriceService.purchasePriceFour;
+	}
+
+	public downPaymentPercentage = 5;
 	public upfrontMiFf = 1.75;
 	public miPercentage = 0.85;
 	public estimatedTaxes = 0.8;
@@ -58,9 +67,13 @@ export class PriceVariedDpComponent implements OnInit {
 
 	public estimatedPaymentOne = (+this.pAndIOne + +this.mortgageInsuranceOne + +this.estimatedPTOne + +this.estimatedHIOne).toFixed(2);
 	public estimatedPaymentTwo = (+this.pAndITwo + +this.mortgageInsuranceTwo + +this.estimatedPTTwo + +this.estimatedHITwo).toFixed(2);
-		// tslint:disable-next-line:max-line-length
+	// tslint:disable-next-line:max-line-length
 	public estimatedPaymentThree = (+this.pAndIThree + +this.mortgageInsuranceThree + +this.estimatedPTThree + +this.estimatedHIThree).toFixed(2);
 	public estimatedPaymentFour = (+this.pAndIFour + +this.mortgageInsuranceFour + +this.estimatedPTFour + +this.estimatedHIFour).toFixed(2);
+
+	ngOnInit() {
+		this.update();
+	}
 
 	public update() {
 		this.downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
@@ -100,16 +113,16 @@ export class PriceVariedDpComponent implements OnInit {
 
 		this.estimatedPaymentOne = (+this.pAndIOne + +this.mortgageInsuranceOne + +this.estimatedPTOne + +this.estimatedHIOne).toFixed(2);
 		this.estimatedPaymentTwo = (+this.pAndITwo + +this.mortgageInsuranceTwo + +this.estimatedPTTwo + +this.estimatedHITwo).toFixed(2);
-			// tslint:disable-next-line:max-line-length
+		// tslint:disable-next-line:max-line-length
 		this.estimatedPaymentThree = (+this.pAndIThree + +this.mortgageInsuranceThree + +this.estimatedPTThree + +this.estimatedHIThree).toFixed(2);
 		this.estimatedPaymentFour = (+this.pAndIFour + +this.mortgageInsuranceFour + +this.estimatedPTFour + +this.estimatedHIFour).toFixed(2);
 	}
 
 	public toOriginal() {
-		this.purchasePriceOne = 225000;
-		this.purchasePriceTwo = 250000;
-		this.purchasePriceThree = 275000;
-		this.purchasePriceFour = 300000;
+		this.purchasePriceOne = this.purchasePriceService.purchasePriceOne;
+		this.purchasePriceTwo = this.purchasePriceService.purchasePriceTwo;
+		this.purchasePriceThree = this.purchasePriceService.purchasePriceThree;
+		this.purchasePriceFour = this.purchasePriceService.purchasePriceFour;
 		this.downPaymentPercentage = 5;
 		this.upfrontMiFf = 1.75;
 		this.miPercentage = 0.85;
@@ -119,12 +132,4 @@ export class PriceVariedDpComponent implements OnInit {
 		this.mortgageYears = 30;
 		this.update();
 	}
-
-	constructor() {
-
-	}
-
-	ngOnInit() {
-	}
-
 }

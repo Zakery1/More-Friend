@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// services
+import { PurchasePricesService } from 'src/app/modules/services/purchase-prices.service';
+
 @Component({
 	selector: 'app-price-varied-exact-dp',
 	templateUrl: './price-varied-exact-dp.component.html',
@@ -7,10 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PriceVariedExactDpComponent implements OnInit {
 
-	private purchasePriceOne = 225000;
-	private purchasePriceTwo = 250000;
-	private purchasePriceThree = 275000;
-	private purchasePriceFour = 300000;
+	public purchasePriceOne: number;
+	public purchasePriceTwo: number;
+	public purchasePriceThree: number;
+	public purchasePriceFour: number;
+
+	constructor(private purchasePriceService: PurchasePricesService) {
+		this.purchasePriceOne = this.purchasePriceService.purchasePriceOne;
+		this.purchasePriceTwo = this.purchasePriceService.purchasePriceTwo;
+		this.purchasePriceThree = this.purchasePriceService.purchasePriceThree;
+		this.purchasePriceFour = this.purchasePriceService.purchasePriceFour;
+	}
 	private downPaymentPercentage = 5;
 
 	private upfrontMiFf = 1.75;
@@ -56,6 +66,11 @@ export class PriceVariedExactDpComponent implements OnInit {
 	private estimatedPaymentThree = (+this.pAndIThree + +this.mortgageInsuranceThree + +this.estimatedPTThree + +this.estimatedHIThree).toFixed(2);
 	private estimatedPaymentFour = (+this.pAndIFour + +this.mortgageInsuranceFour + +this.estimatedPTFour + +this.estimatedHIFour).toFixed(2);
 
+
+	ngOnInit() {
+		this.update();
+	}
+
 	update() {
 		this.loanAmountOne = (this.purchasePriceOne - this.downPayment) * (100 + this.upfrontMiFf) / 100;
 		this.loanAmountTwo = (this.purchasePriceTwo - this.downPayment) * (100 + this.upfrontMiFf) / 100;
@@ -94,10 +109,10 @@ export class PriceVariedExactDpComponent implements OnInit {
 	}
 
 	toOriginal() {
-		this.purchasePriceOne = 225000;
-		this.purchasePriceTwo = 250000;
-		this.purchasePriceThree = 275000;
-		this.purchasePriceFour = 300000;
+		this.purchasePriceOne = this.purchasePriceService.purchasePriceOne;
+		this.purchasePriceTwo = this.purchasePriceService.purchasePriceTwo;
+		this.purchasePriceThree = this.purchasePriceService.purchasePriceThree;
+		this.purchasePriceFour = this.purchasePriceService.purchasePriceFour;
 		this.downPaymentPercentage = 5;
 		this.upfrontMiFf = 1.75;
 		this.miPercentage = 0.85;
@@ -107,11 +122,6 @@ export class PriceVariedExactDpComponent implements OnInit {
 		this.mortgageYears = 30;
 		this.downPayment = 20000;
 		this.update();
-	}
-
-	constructor() { }
-
-	ngOnInit() {
 	}
 
 }
