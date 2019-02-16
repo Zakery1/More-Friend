@@ -4,10 +4,7 @@
 		<div class="ppc">
 			<div class="ppc-row">
 				<div class="display-pprices display-pprices-l">Purchase Price</div>
-				<div class="display-pprices">${{purchasePriceOne}}</div>
-				<div class="display-pprices">${{purchasePriceTwo}}</div>
-				<div class="display-pprices">${{purchasePriceThree}}</div>
-				<div class="display-pprices">${{purchasePriceFour}}</div>
+				<div *ngFor="let purchasePrice of purchasePrices" class="display-pprices">{{purchasePrice}}</div>
 			</div>
 			<div class="ppc-row">
 				<div class="display-pprices display-pprices-l">Down Payment</div>
@@ -86,10 +83,7 @@
 		<p class="input-line">Estimated HOI (%)<input (input)="update()" [(ngModel)]="estimateHOI" type="number"></p>
 		<p class="input-line">Interest Rate (%)<input (input)="update()" [(ngModel)]="interestRate" type="number"></p>
 		<p class="input-line">Length of Mortgage (Years)<input (input)="update()" [(ngModel)]="mortgageYears" type="number"></p>
-		<p class="input-line">Purchase Price #1<input (input)="update()" [(ngModel)]="purchasePriceOne" type="number"></p>
-		<p class="input-line">Purchase Price #2<input (input)="update()" [(ngModel)]="purchasePriceTwo" type="number"></p>
-		<p class="input-line">Purchase Price #3<input (input)="update()" [(ngModel)]="purchasePriceThree" type="number"></p>
-		<p class="input-line">Purchase Price #4<input (input)="update()" [(ngModel)]="purchasePriceFour" type="number"></p>
+		<p *ngFor="let purchasePrice of purchasePrices;let index = index;trackBy:trackByIndex;" class="input-line">Purchase Price #1<input (input)="update()" [(ngModel)]="purchasePrices[index]" type="number"></p>
 	</div>
 	<button (click)="toOriginal()">Revert to Original Values</button>
 </div>
