@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 // services
 import { PurchasePricesService } from './../../../services/purchase-prices.service';
+import { PriceVariedDPService } from './services/price-varied-dp.service';
 
 @Component({
 	selector: 'app-price-varied-dp',
@@ -15,21 +16,20 @@ export class PriceVariedDpComponent implements OnInit {
 	public purchasePriceThree: number;
 	public purchasePriceFour: number;
 
-	constructor(private purchasePriceService: PurchasePricesService) {
-		this.purchasePriceOne = this.purchasePriceService.purchasePriceOne;
-		this.purchasePriceTwo = this.purchasePriceService.purchasePriceTwo;
-		this.purchasePriceThree = this.purchasePriceService.purchasePriceThree;
-		this.purchasePriceFour = this.purchasePriceService.purchasePriceFour;
+	public downPaymentPercentage: number;
+	public upfrontMiFf: number;
+	public miPercentage: number;
+	public estimatedTaxes: number;
+	public estimateHOI: number;
+	public interestRate: number;
+	public mortgageYears: number;
+
+	constructor(
+		private purchasePriceService: PurchasePricesService,
+		private priceVariedDPService: PriceVariedDPService) {
+		this.loadPurchasePrices();
+		this.loadComponentValues();
 	}
-
-	public downPaymentPercentage = 5;
-	public upfrontMiFf = 1.75;
-	public miPercentage = 0.85;
-	public estimatedTaxes = 0.8;
-	public estimateHOI = 0.35;
-	public interestRate = 4.125;
-	public mortgageYears = 30;
-
 
 	public downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
 	public downPaymentTwo = (this.purchasePriceTwo * this.downPaymentPercentage) / 100;
@@ -70,6 +70,23 @@ export class PriceVariedDpComponent implements OnInit {
 	// tslint:disable-next-line:max-line-length
 	public estimatedPaymentThree = (+this.pAndIThree + +this.mortgageInsuranceThree + +this.estimatedPTThree + +this.estimatedHIThree).toFixed(2);
 	public estimatedPaymentFour = (+this.pAndIFour + +this.mortgageInsuranceFour + +this.estimatedPTFour + +this.estimatedHIFour).toFixed(2);
+
+	loadPurchasePrices() {
+		this.purchasePriceOne = this.purchasePriceService.purchasePriceOne;
+		this.purchasePriceTwo = this.purchasePriceService.purchasePriceTwo;
+		this.purchasePriceThree = this.purchasePriceService.purchasePriceThree;
+		this.purchasePriceFour = this.purchasePriceService.purchasePriceFour;
+	}
+
+	loadComponentValues() {
+		this.downPaymentPercentage = this.priceVariedDPService.downPaymentPercentage;
+		this.upfrontMiFf = this.priceVariedDPService.upfrontMiFf;
+		this.miPercentage = this.priceVariedDPService.miPercentage;
+		this.estimatedTaxes = this.priceVariedDPService.estimatedTaxes;
+		this.estimateHOI = this.priceVariedDPService.estimateHOI;
+		this.interestRate = this.priceVariedDPService.interestRate;
+		this.mortgageYears = this.priceVariedDPService.mortgageYears;
+	}
 
 	ngOnInit() {
 		this.update();
