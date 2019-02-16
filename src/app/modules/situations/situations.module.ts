@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 
+
 import { PriceVariedDpComponent } from './components/price-varied-dp/price-varied-dp.component';
 import { PriceOnePropDpComponent } from './components/price-one-prop-dp/price-one-prop-dp.component';
 import { PriceOnePropExactComponent } from './components/price-one-prop-exact/price-one-prop-exact.component';
