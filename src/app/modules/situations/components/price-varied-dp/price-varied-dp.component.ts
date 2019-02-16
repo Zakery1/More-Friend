@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // services
-import { PurchasePricesService } from './../../../services/purchase-prices.service';
+import { PurchasePricesService } from '../../../services/purchase-price-service/purchase-prices.service';
 import { PriceVariedDPService } from './services/price-varied-dp.service';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // services
-import { PurchasePricesService } from 'src/app/modules/services/purchase-prices.service';
+import { PurchasePricesService } from 'src/app/modules/services/purchase-price-service/purchase-prices.service';
 
 @Component({
 	selector: 'app-price-varied-exact-dp',
