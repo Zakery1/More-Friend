@@ -8,10 +8,7 @@
 			</div>
 			<div class="ppc-row">
 				<div class="display-pprices display-pprices-l">Down Payment</div>
-				<div class="display-pprices">${{downPaymentOne}}</div>
-				<div class="display-pprices">${{downPaymentTwo}}</div>
-				<div class="display-pprices">${{downPaymentThree}}</div>
-				<div class="display-pprices">${{downPaymentFour}}</div>
+				<div *ngFor="let downPayment of downPayments" class="display-pprices">{{downPayment}}</div>
 			</div>
 			<div class="ppc-row">
 				<div class="display-pprices display-pprices-l">Loan Amount</div>

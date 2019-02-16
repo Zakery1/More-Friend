@@ -33,10 +33,9 @@ export class PriceVariedDpComponent implements OnInit {
 
 
 	constructor(
-		private purchasePriceService: PurchasePricesService,
 		private priceVariedDPService: PriceVariedDPService) {
-		this.purchasePrices = this.purchasePriceService.purchasePrices;
-		console.log(this.purchasePrices);
+		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
+		this.downPayments = this.priceVariedDPService.pvdWork.variedDPArrays.downPayments;
 		// this.loadPurchasePrices();
 		// this.loadComponentValues();
 	}
