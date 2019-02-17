@@ -36,12 +36,18 @@ export class PriceVariedDpComponent implements OnInit {
 		private priceVariedDPService: PriceVariedDPService) {
 		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
 		this.downPayments = this.priceVariedDPService.pvdWork.variedDPArrays.downPayments;
+
 		// this.loadPurchasePrices();
 		// this.loadComponentValues();
 	}
 
 	ngOnInit() {
 		// this.update();
+	}
+
+	update() {
+		console.log(this.purchasePrices);
+		this.priceVariedDPService.update();
 	}
 
 	// public downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
