@@ -43,12 +43,17 @@ export class PriceVariedDPService {
 		this.setDownPayments();
 	}
 
+	update() {
+		this.setDownPayments();
+		this.setPurchasePrices();
+	}
+
 	reset() {
 		this.fillInputs();
 	}
 
 	fillInputs() {
-		this.arrays.purchasePrices = this.purchasePriceService.purchasePrices;
+		this.arrays.purchasePrices = [225000, 250000, 275000, 300000];
 		this.config.downPaymentPercentage = 5;
 		this.config.upfrontMiFf = 1.75;
 		this.config.miPercentage = 0.85;
@@ -60,12 +65,11 @@ export class PriceVariedDPService {
 
 	public setPurchasePrices() {
 		this.arrays.purchasePrices = this.arrays.purchasePrices.map(pP => {
-			console.log('map PPs', pP);
+			this.calculationsService.getPurchasePrices(pP);
 
-			setTimeout(() => this.calculationsService.getPurchasePrices(pP), 500);
-			console.log('after map', this.arrays.purchasePrices);
-			console.log('call get in service', this.calculationsService.getPurchasePrices(pP));
+			// console.log('call get in service', this.calculationsService.getPurchasePrices(pP));
 		});
+					console.log('after map', this.arrays.purchasePrices);
 	}
 
 	public setDownPayments() {
@@ -77,11 +81,7 @@ export class PriceVariedDPService {
 	// setDownPayments() {
 	// 	this.pvdWork.variedDPArrays.downPayments = this.pvdWork.variedDPArrays.purchasePrices.map( x => (x * this.pvdWork.variedDPConfig.downPaymentPercentage / 100));
 	// }
-	update() {
-		this.setDownPayments();
-		this.setPurchasePrices();
-		console.log('purchase prices in service', this.arrays.purchasePrices);
-	}
+
 
 
 

@@ -22,7 +22,7 @@ export class PriceVariedDpComponent implements OnInit {
 		mortgageYears: null
 	};
 
-	public purchasePrices = [];
+	public purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
 	private downPayments = [];
 	private loanAmounts = [];
 	private pAndIs = [];
@@ -43,12 +43,13 @@ export class PriceVariedDpComponent implements OnInit {
 
 	ngOnInit() {
 		// this.update();
+
 	}
 
 	update() {
-		console.log('price varied component', this.purchasePrices);
 		this.priceVariedDPService.update();
-		console.log('price varied updated!!!', this.priceVariedDPService.update());
+		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
+		console.log(this.purchasePrices);
 	}
 
 	// public downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
