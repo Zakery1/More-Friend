@@ -46,8 +46,9 @@ export class PriceVariedDpComponent implements OnInit {
 	}
 
 	update() {
-		console.log(this.purchasePrices);
+		console.log('price varied component', this.purchasePrices);
 		this.priceVariedDPService.update();
+		console.log('price varied updated!!!', this.priceVariedDPService.update());
 	}
 
 	// public downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;

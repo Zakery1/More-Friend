@@ -80,7 +80,7 @@
 		<p class="input-line">Estimated HOI (%)<input (input)="update()" [(ngModel)]="estimateHOI" type="number"></p>
 		<p class="input-line">Interest Rate (%)<input (input)="update()" [(ngModel)]="interestRate" type="number"></p>
 		<p class="input-line">Length of Mortgage (Years)<input (input)="update()" [(ngModel)]="mortgageYears" type="number"></p>
-		<p *ngFor="let purchasePrice of purchasePrices;let index = index;trackBy:trackByIndex;" class="input-line">Purchase Price #1<input (input)="update()" [(ngModel)]="purchasePrices[index]" type="number"></p>
+		<p *ngFor="let purchasePrice of purchasePrices;let index = index;trackBy:trackByIndex;" class="input-line">Purchase Price {{1 + index}}<input (input)="update()" [(ngModel)]="purchasePrices[index]" type="number"></p>
 	</div>
 	<button (click)="toOriginal()">Revert to Original Values</button>
 </div>

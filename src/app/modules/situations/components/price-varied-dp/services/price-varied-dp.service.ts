@@ -60,7 +60,11 @@ export class PriceVariedDPService {
 
 	public setPurchasePrices() {
 		this.arrays.purchasePrices = this.arrays.purchasePrices.map(pP => {
-			this.calculationsService.getPurchasePrices(pP);
+			console.log('map PPs', pP);
+
+			setTimeout(() => this.calculationsService.getPurchasePrices(pP), 500);
+			console.log('after map', this.arrays.purchasePrices);
+			console.log('call get in service', this.calculationsService.getPurchasePrices(pP));
 		});
 	}
 
@@ -74,9 +78,9 @@ export class PriceVariedDPService {
 	// 	this.pvdWork.variedDPArrays.downPayments = this.pvdWork.variedDPArrays.purchasePrices.map( x => (x * this.pvdWork.variedDPConfig.downPaymentPercentage / 100));
 	// }
 	update() {
-		console.log(this.arrays.purchasePrices);
 		this.setDownPayments();
 		this.setPurchasePrices();
+		console.log('purchase prices in service', this.arrays.purchasePrices);
 	}
 
 
