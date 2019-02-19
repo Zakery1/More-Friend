@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // services
-import { PurchasePricesService } from 'src/app/modules/services/purchase-prices.service';
+import { PurchasePricesService } from 'src/app/modules/services/purchase-price-service/purchase-prices.service';
 
 @Component({
 	selector: 'app-price-varied-exact-dp',
@@ -10,16 +10,17 @@ import { PurchasePricesService } from 'src/app/modules/services/purchase-prices.
 })
 export class PriceVariedExactDpComponent implements OnInit {
 
-	public purchasePriceOne: number;
-	public purchasePriceTwo: number;
-	public purchasePriceThree: number;
-	public purchasePriceFour: number;
+	public purchasePriceOne;
+	public purchasePriceTwo;
+	public purchasePriceThree;
+	public purchasePriceFour;
 
-	constructor(private purchasePriceService: PurchasePricesService) {
-		this.purchasePriceOne = this.purchasePriceService.purchasePriceOne;
-		this.purchasePriceTwo = this.purchasePriceService.purchasePriceTwo;
-		this.purchasePriceThree = this.purchasePriceService.purchasePriceThree;
-		this.purchasePriceFour = this.purchasePriceService.purchasePriceFour;
+	constructor(private purchasePricesService: PurchasePricesService) {
+		this.purchasePriceOne = 225000;
+		this.purchasePriceTwo = 250000;
+		this.purchasePriceThree = 275000;
+		this.purchasePriceFour = 300000;
+
 	}
 	private downPaymentPercentage = 5;
 
@@ -69,6 +70,8 @@ export class PriceVariedExactDpComponent implements OnInit {
 
 	ngOnInit() {
 		this.update();
+
+		console.log(this.purchasePriceOne);
 	}
 
 	update() {
@@ -109,10 +112,10 @@ export class PriceVariedExactDpComponent implements OnInit {
 	}
 
 	toOriginal() {
-		this.purchasePriceOne = this.purchasePriceService.purchasePriceOne;
-		this.purchasePriceTwo = this.purchasePriceService.purchasePriceTwo;
-		this.purchasePriceThree = this.purchasePriceService.purchasePriceThree;
-		this.purchasePriceFour = this.purchasePriceService.purchasePriceFour;
+		this.purchasePriceOne = this.purchasePricesService.purchasePriceOne;
+		this.purchasePriceTwo = this.purchasePricesService.purchasePriceTwo;
+		this.purchasePriceThree = this.purchasePricesService.purchasePriceThree;
+		this.purchasePriceFour = this.purchasePricesService.purchasePriceFour;
 		this.downPaymentPercentage = 5;
 		this.upfrontMiFf = 1.75;
 		this.miPercentage = 0.85;

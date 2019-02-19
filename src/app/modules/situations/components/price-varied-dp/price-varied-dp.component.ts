@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // services
-import { PurchasePricesService } from './../../../services/purchase-prices.service';
+import { PurchasePricesService } from '../../../services/purchase-price-service/purchase-prices.service';
 import { PriceVariedDPService } from './services/price-varied-dp.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class PriceVariedDpComponent implements OnInit {
 		mortgageYears: null
 	};
 
-	public purchasePrices = [];
+	public purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
 	private downPayments = [];
 	private loanAmounts = [];
 	private pAndIs = [];
@@ -33,16 +33,28 @@ export class PriceVariedDpComponent implements OnInit {
 
 
 	constructor(
-		private purchasePriceService: PurchasePricesService,
 		private priceVariedDPService: PriceVariedDPService) {
-		this.purchasePrices = this.purchasePriceService.purchasePrices;
-		console.log(this.purchasePrices);
-		// this.loadPurchasePrices();
-		// this.loadComponentValues();
+		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
+		this.downPayments = this.priceVariedDPService.pvdWork.variedDPArrays.downPayments;
+
+		console.log('constructor in component', this.purchasePrices);
 	}
 
 	ngOnInit() {
 		// this.update();
+
+	}
+
+	trackByFn(index: any, item: any) {
+		return index;
+	}
+
+	update() {
+		console.log('component before update', this.purchasePrices);
+		this.priceVariedDPService.update();
+		console.log('after component update', this.purchasePrices);
+		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
+		console.log('after values are assigned in component', this.purchasePrices);
 	}
 
 	// public downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
