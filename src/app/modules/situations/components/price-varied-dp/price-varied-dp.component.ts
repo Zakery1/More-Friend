@@ -37,7 +37,7 @@ export class PriceVariedDpComponent implements OnInit {
 		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
 		this.downPayments = this.priceVariedDPService.pvdWork.variedDPArrays.downPayments;
 
-			console.log('constructor in component', this.purchasePrices);
+		console.log('constructor in component', this.purchasePrices);
 	}
 
 	ngOnInit() {
@@ -45,10 +45,16 @@ export class PriceVariedDpComponent implements OnInit {
 
 	}
 
+	trackByFn(index: any, item: any) {
+		return index;
+	}
+
 	update() {
 		console.log('component before update', this.purchasePrices);
 		this.priceVariedDPService.update();
+		console.log('after component update', this.purchasePrices);
 		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
+		console.log('after values are assigned in component', this.purchasePrices);
 	}
 
 	// public downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;

@@ -34,7 +34,6 @@ export class PriceVariedDPService {
 	private config = this.pvdWork.variedDPConfig;
 	private arrays = this.pvdWork.variedDPArrays;
 
-
 	constructor(
 		private purchasePriceService: PurchasePricesService,
 		private calculationsService: CalculationsService
@@ -47,13 +46,15 @@ export class PriceVariedDPService {
 		console.log('before update in service', this.arrays.purchasePrices);
 		this.setDownPayments();
 		this.setPurchasePrices();
+		console.log('after update function in service', this.purchasePriceService);
 	}
+
+
 
 	public setPurchasePrices() {
 		console.log('before setPurchases in service', this.arrays.purchasePrices);
 		this.arrays.purchasePrices = this.arrays.purchasePrices.map(pP => {
-			this.calculationsService.getPurchasePrices(pP);
-
+			return this.calculationsService.getPurchasePrices(pP);
 			// console.log('call get in service', this.calculationsService.getPurchasePrices(pP));
 		});
 		console.log('after map', this.arrays.purchasePrices);
@@ -74,7 +75,6 @@ export class PriceVariedDPService {
 		this.config.mortgageYears = 30;
 	}
 
-
 	public setDownPayments() {
 		this.arrays.downPayments = this.arrays.purchasePrices.map(
 			pP => this.calculationsService.getDownPaymentsUsingPercentage(pP, this.pvdWork.variedDPConfig.downPaymentPercentage),
@@ -84,10 +84,4 @@ export class PriceVariedDPService {
 	// setDownPayments() {
 	// 	this.pvdWork.variedDPArrays.downPayments = this.pvdWork.variedDPArrays.purchasePrices.map( x => (x * this.pvdWork.variedDPConfig.downPaymentPercentage / 100));
 	// }
-
-
-
-
-
-
 }
