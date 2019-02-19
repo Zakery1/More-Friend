@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class CalculationsService {
 
 	public getPurchasePrices(pP) {
-		console.log('calculations', pP);
+		console.log('in calculation service', pP);
 		return pP;
 	}
 

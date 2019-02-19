@@ -44,8 +44,19 @@ export class PriceVariedDPService {
 	}
 
 	update() {
+		console.log('before update in service', this.arrays.purchasePrices);
 		this.setDownPayments();
 		this.setPurchasePrices();
+	}
+
+	public setPurchasePrices() {
+		console.log('before setPurchases in service', this.arrays.purchasePrices);
+		this.arrays.purchasePrices = this.arrays.purchasePrices.map(pP => {
+			this.calculationsService.getPurchasePrices(pP);
+
+			// console.log('call get in service', this.calculationsService.getPurchasePrices(pP));
+		});
+		console.log('after map', this.arrays.purchasePrices);
 	}
 
 	reset() {
@@ -63,14 +74,6 @@ export class PriceVariedDPService {
 		this.config.mortgageYears = 30;
 	}
 
-	public setPurchasePrices() {
-		this.arrays.purchasePrices = this.arrays.purchasePrices.map(pP => {
-			this.calculationsService.getPurchasePrices(pP);
-
-			// console.log('call get in service', this.calculationsService.getPurchasePrices(pP));
-		});
-					console.log('after map', this.arrays.purchasePrices);
-	}
 
 	public setDownPayments() {
 		this.arrays.downPayments = this.arrays.purchasePrices.map(
