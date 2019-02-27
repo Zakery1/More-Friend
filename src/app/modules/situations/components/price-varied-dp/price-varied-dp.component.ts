@@ -1,5 +1,7 @@
 // angular
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators, FormArray } from '@angular/forms';
+
 
 // services
 import { PurchasePricesService } from '../../../services/purchase-price-service/purchase-prices.service';
@@ -11,6 +13,20 @@ import { PriceVariedDPService } from './services/price-varied-dp.service';
 	styleUrls: ['./price-varied-dp.component.scss']
 })
 export class PriceVariedDpComponent implements OnInit {
+
+	officerInputForm = this.fb.group({
+		downPaymentPercentage: [''],
+		upfrontMiFf: [''],
+		miPercentage: [''],
+		estimatedTaxes: [''],
+		estimateHOI: [''],
+		interestRate: [''],
+		mortgageYears: [''],
+		purchasePriceArray: this.fb.array([
+			this.fb.control('')
+		])
+	});
+
 
 	private config = {
 		downPaymentPercentage: null,
@@ -33,9 +49,11 @@ export class PriceVariedDpComponent implements OnInit {
 
 
 	constructor(
+		private fb: FormBuilder,
 		private priceVariedDPService: PriceVariedDPService) {
 		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
 		this.downPayments = this.priceVariedDPService.pvdWork.variedDPArrays.downPayments;
+
 
 		console.log('constructor in component', this.purchasePrices);
 	}

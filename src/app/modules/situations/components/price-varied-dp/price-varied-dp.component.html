@@ -72,6 +72,56 @@
 	<br>
 	<h4>Loan Officer Input</h4>
 	<br>
+
+	<form [formGroup]="officerInputForm" (ngSubmit)="onSubmit()">
+
+		<label>
+			Down Payment (%)
+			<input type="text" formControlName="downPaymentPercentage" required>
+		</label>
+		<br>
+		<label>
+			Upfront MI/FF (%
+			<input type="text" formControlName="upfrontMiFf" required>
+		</label>
+		<br>
+		<label>
+			Annual MI Percentage (%)
+			<input type="text" formControlName="miPercentage" required>
+		</label>
+		<br>
+		<label>
+			Estimated Taxes (%)
+			<input type="text" formControlName="estimatedTaxes" required>
+		</label>
+		<br>
+		<label>
+			Estimated HOI (%)
+			<input type="text" formControlName="estimateHOI" required>
+		</label>
+		<br>
+		<label>
+			Interest Rate (%)
+			<input type="text" formControlName="interestRate" required>
+		</label>
+		<br>
+		<label>
+			Length of Mortgage (Years)
+			<input type="text" formControlName="mortgageYears" required>
+		</label>		
+		<br>
+		<div formArrayName="purchasePriceArray">
+				<div *ngFor="let address of aliases.controls; let i=index">
+					<label>
+						Alias: 
+						<input type="text" [formControlName]="i">
+					</label>
+				</div>
+			</div>
+
+	</form>
+	<br>
+
 	<div class="loi">
 		<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>		
 		<p class="input-line">Upfront MI/FF (%)<input (input)="update()" [(ngModel)]="upfrontMiFf" type="number"></p>

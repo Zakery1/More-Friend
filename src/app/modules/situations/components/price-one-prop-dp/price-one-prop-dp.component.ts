@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoanOfficerInput } from '../../../interfaces/loanOfficerInput';
 @Component({
 	selector: 'app-price-one-prop-dp',
 	templateUrl: './price-one-prop-dp.component.html',
@@ -11,6 +11,16 @@ export class PriceOnePropDpComponent implements OnInit {
 	private purchasePriceTwo = 250000;
 	private purchasePriceThree = 275000;
 	private purchasePriceFour = 300000;
+
+	private inputs: LoanOfficerInput = {
+		downPaymentPercentage: 3.5,
+		upfrontMiFf: 6,
+		miPercentage: 0.59,
+		estimatedTaxes: 70,
+		estimateHOI: 83.33,
+		interestRate: 5.375,
+		mortgageYears: 30,
+};
 
 	private downPaymentPercentage = 3.5;
 	private upfrontMiFf = 6;
@@ -28,7 +38,7 @@ export class PriceOnePropDpComponent implements OnInit {
 
 	private loanAmountOne = ((this.purchasePriceOne * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100).toFixed(2);
 	private loanAmountTwo = ((this.purchasePriceTwo * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100).toFixed(2);
-		// tslint:disable-next-line:max-line-length
+	// tslint:disable-next-line:max-line-length
 	private loanAmountThree = ((this.purchasePriceThree * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100).toFixed(2);
 	private loanAmountFour = ((this.purchasePriceFour * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100);
 
@@ -58,7 +68,7 @@ export class PriceOnePropDpComponent implements OnInit {
 
 	private estimatedPaymentOne = (+this.pAndIOne + +this.mortgageInsuranceOne + +this.estimatedPTOne + +this.estimatedHIOne).toFixed(2);
 	private estimatedPaymentTwo = (+this.pAndITwo + +this.mortgageInsuranceTwo + +this.estimatedPTTwo + +this.estimatedHITwo).toFixed(2);
-		// tslint:disable-next-line:max-line-length
+	// tslint:disable-next-line:max-line-length
 	private estimatedPaymentThree = (+this.pAndIThree + +this.mortgageInsuranceThree + +this.estimatedPTThree + +this.estimatedHIThree).toFixed(2);
 	private estimatedPaymentFour = (+this.pAndIFour + +this.mortgageInsuranceFour + +this.estimatedPTFour + +this.estimatedHIFour).toFixed(2);
 
@@ -67,7 +77,7 @@ export class PriceOnePropDpComponent implements OnInit {
 		this.downPaymentTwo = (this.purchasePriceTwo * this.downPaymentPercentage) / 100;
 		this.downPaymentThree = (this.purchasePriceThree * this.downPaymentPercentage) / 100;
 		this.downPaymentFour = (this.purchasePriceFour * this.downPaymentPercentage) / 100;
-			// tslint:disable-next-line:max-line-length
+		// tslint:disable-next-line:max-line-length
 
 		this.loanAmountOne = ((this.purchasePriceOne * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100).toFixed(2);
 		this.loanAmountTwo = ((this.purchasePriceTwo * (100 - this.downPaymentPercentage) / 100) * (100 + this.upfrontMiFf) / 100).toFixed(2);
@@ -100,7 +110,7 @@ export class PriceOnePropDpComponent implements OnInit {
 
 		this.estimatedPaymentOne = (+this.pAndIOne + +this.mortgageInsuranceOne + +this.estimatedPTOne + +this.estimatedHIOne).toFixed(2);
 		this.estimatedPaymentTwo = (+this.pAndITwo + +this.mortgageInsuranceTwo + +this.estimatedPTTwo + +this.estimatedHITwo).toFixed(2);
-			// tslint:disable-next-line:max-line-length
+		// tslint:disable-next-line:max-line-length
 		this.estimatedPaymentThree = (+this.pAndIThree + +this.mortgageInsuranceThree + +this.estimatedPTThree + +this.estimatedHIThree).toFixed(2);
 		this.estimatedPaymentFour = (+this.pAndIFour + +this.mortgageInsuranceFour + +this.estimatedPTFour + +this.estimatedHIFour).toFixed(2);
 	}
