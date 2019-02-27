@@ -28,6 +28,8 @@ export class PriceVariedDpComponent implements OnInit {
 	});
 
 
+
+
 	private config = {
 		downPaymentPercentage: null,
 		upfrontMiFf: null,
@@ -61,6 +63,14 @@ export class PriceVariedDpComponent implements OnInit {
 	ngOnInit() {
 		// this.update();
 
+	}
+
+	get purchasePriceArray() {
+		return this.officerInputForm.get('purchasePriceArray') as FormArray;
+	}
+
+	addPurchasesPrices() {
+		// this.purchasePriceArray.push(this.fb.control(''));
 	}
 
 	trackByFn(index: any, item: any) {

@@ -111,9 +111,9 @@
 		</label>		
 		<br>
 		<div formArrayName="purchasePriceArray">
-				<div *ngFor="let address of aliases.controls; let i=index">
+				<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
 					<label>
-						Alias: 
+						Purchase Price {{i+1}} 
 						<input type="text" [formControlName]="i">
 					</label>
 				</div>
