@@ -111,18 +111,18 @@
 		</label>		
 		<br>
 		<div formArrayName="purchasePriceArray">
-				<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
-					<label>
-						Purchase Price {{i+1}} 
-						<input type="text" [formControlName]="i">
-					</label>
-				</div>
+			<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
+				<label>
+					Purchase Price {{i+1}} 
+					<input type="number" [formControlName]="i">
+				</label>
 			</div>
+		</div>
 
 	</form>
 	<br>
 
-	<div class="loi">
+	<!-- <div class="loi">
 		<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>		
 		<p class="input-line">Upfront MI/FF (%)<input (input)="update()" [(ngModel)]="upfrontMiFf" type="number"></p>
 		<p class="input-line">Annual MI Percentage (%)<input (input)="update()" [(ngModel)]="miPercentage" type="number"></p>
@@ -132,5 +132,5 @@
 		<p class="input-line">Length of Mortgage (Years)<input (input)="update()" [(ngModel)]="mortgageYears" type="number"></p>
 		<p *ngFor="let purchasePrice of purchasePrices;let index = index;trackBy:trackByFn;" class="input-line">Purchase Price {{1 + index}}<input (input)="update()" [(ngModel)]="purchasePrices[index]" type="number"></p>
 	</div>
-	<button (click)="toOriginal()">Revert to Original Values</button>
+	<button (click)="toOriginal()">Revert to Original Values</button> -->
 </div>

@@ -14,6 +14,7 @@ import { PriceVariedDPService } from './services/price-varied-dp.service';
 })
 export class PriceVariedDpComponent implements OnInit {
 
+	public purchasePrices: number[] = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
 	officerInputForm = this.fb.group({
 		downPaymentPercentage: [''],
 		upfrontMiFf: [''],
@@ -22,13 +23,8 @@ export class PriceVariedDpComponent implements OnInit {
 		estimateHOI: [''],
 		interestRate: [''],
 		mortgageYears: [''],
-		purchasePriceArray: this.fb.array([
-			this.fb.control('')
-		])
+		purchasePriceArray: this.purchasePriceForm
 	});
-
-
-
 
 	private config = {
 		downPaymentPercentage: null,
@@ -40,7 +36,6 @@ export class PriceVariedDpComponent implements OnInit {
 		mortgageYears: null
 	};
 
-	public purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
 	private downPayments = [];
 	private loanAmounts = [];
 	private pAndIs = [];
@@ -55,9 +50,6 @@ export class PriceVariedDpComponent implements OnInit {
 		private priceVariedDPService: PriceVariedDPService) {
 		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
 		this.downPayments = this.priceVariedDPService.pvdWork.variedDPArrays.downPayments;
-
-
-		console.log('constructor in component', this.purchasePrices);
 	}
 
 	ngOnInit() {
@@ -65,16 +57,10 @@ export class PriceVariedDpComponent implements OnInit {
 
 	}
 
-	get purchasePriceArray() {
-		return this.officerInputForm.get('purchasePriceArray') as FormArray;
-	}
-
-	addPurchasesPrices() {
-		// this.purchasePriceArray.push(this.fb.control(''));
-	}
-
-	trackByFn(index: any, item: any) {
-		return index;
+	get purchasePriceForm() {
+		return this.fb.array(this.purchasePrices.map(
+			(price: number) => this.fb.control([ price ])
+		));
 	}
 
 	update() {
