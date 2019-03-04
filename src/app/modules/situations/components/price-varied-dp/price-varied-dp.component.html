@@ -6,6 +6,20 @@
 				<div class="display-pprices display-pprices-l">Purchase Price</div>
 				<div *ngFor="let purchasePrice of purchasePrices" class="display-pprices">{{purchasePrice}}</div>
 			</div>
+			 <!-- <div formControlName="purchasePriceArray">
+				<div *ngFor="let purchasePrice of purchasePrices" [value]="purchasePrice">{{purchasePrice}}</div>
+			</div> -->
+
+			<!-- <select class="form-control" formControlName="state">
+				<option *ngFor="let state of states" [value]="state">{{state}}</option>
+			</select>  -->
+
+			<!-- {{}} -->
+						<!-- Purchase Price {{i+1}}  -->
+						<!-- {{purchasePriceArray}} -->
+						<!-- <div formControlName="i"></div> -->
+						<!-- <input type="number" [formControlName]="i"> -->
+
 			<div class="ppc-row">
 				<div class="display-pprices display-pprices-l">Down Payment</div>
 				<div *ngFor="let downPayment of downPayments" class="display-pprices">{{downPayment}}</div>
@@ -121,6 +135,8 @@
 
 	</form>
 	<br>
+
+	
 
 	<!-- <div class="loi">
 		<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>		

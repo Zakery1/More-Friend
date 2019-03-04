@@ -28,7 +28,6 @@ import { RateFeeCompPurchaseComponent } from './components/rate-fee-comp-purchas
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule
-
 	]
 })
 export class SituationsModule { }
