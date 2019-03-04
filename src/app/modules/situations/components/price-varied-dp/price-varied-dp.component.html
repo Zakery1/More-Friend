@@ -6,9 +6,17 @@
 				<div class="display-pprices display-pprices-l">Purchase Price</div>
 				<div *ngFor="let purchasePrice of purchasePrices" class="display-pprices">{{purchasePrice}}</div>
 			</div>
+
+			{{officerInputForm.value | json}}
+
+			<!-- Steve-this is my attempt below-->
+
 			 <!-- <div formControlName="purchasePriceArray">
 				<div *ngFor="let purchasePrice of purchasePrices" [value]="purchasePrice">{{purchasePrice}}</div>
 			</div> -->
+
+			
+
 
 			<!-- <select class="form-control" formControlName="state">
 				<option *ngFor="let state of states" [value]="state">{{state}}</option>

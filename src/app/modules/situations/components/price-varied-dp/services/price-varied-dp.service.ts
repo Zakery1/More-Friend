@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // services
-import { PurchasePricesService } from 'src/app/modules/services/purchase-price-service/purchase-prices.service';
+import { PurchasePricesService } from '../../../../services/purchase-price-service/purchase-prices.service';
 import { CalculationsService } from './../../../../services/calculations-service/calculations.service';
 
 @Injectable({
