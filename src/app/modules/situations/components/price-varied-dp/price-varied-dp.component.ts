@@ -24,7 +24,9 @@ export class PriceVariedDpComponent implements OnInit {
 		estimateHOI: [''],
 		interestRate: [''],
 		mortgageYears: [''],
-		purchasePriceArray: this.purchasePriceForm
+		purchasePriceArray:  this.fb.array(this.purchasePrices.map(
+			(price: number) => this.fb.control([ price ])
+		))
 	});
 
 	private downPayments = [];
@@ -39,31 +41,18 @@ export class PriceVariedDpComponent implements OnInit {
 	constructor(
 		private fb: FormBuilder,
 		private priceVariedDPService: PriceVariedDPService) {
+			console.log(this.officerInputForm.value.purchasePriceArray);
 	}
 
 	ngOnInit() {
 		// this.update();
-
-
-	}
-
-	get purchasePriceForm() {
-		return this.fb.array(this.purchasePrices.map(
-			(price: number) => this.fb.control([ price ])
-		));
 	}
 
 	get purchasePriceArray() {
 		return this.officerInputForm.get('purchasePriceArray') as FormArray;
 	}
 
-	addPurchasesPrices() {
-		// this.purchasePriceArray.push(this.fb.control(''));
-	}
 
-	trackByFn(index: any, item: any) {
-		return index;
-	}
 
 	update() {
 		console.log('component before update', this.purchasePrices);

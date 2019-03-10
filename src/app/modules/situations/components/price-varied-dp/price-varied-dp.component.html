@@ -1,20 +1,30 @@
 <div class="pvdp-main">
 	<h3>Purchase Price Comparison</h3>
+	<form [formGroup]="officerInputForm" (ngSubmit)="onSubmit()">
 	<div class="ppc-top">
 		<div class="ppc">
-			<div class="ppc-row">
-				<div class="display-pprices display-pprices-l">Purchase Price</div>
-				<div *ngFor="let purchasePrice of purchasePrices" class="display-pprices">{{purchasePrice}}</div>
+			<!-- {{officerInputForm.value.purchasePriceArray}} -->
+			<div class="ppc-row" formArrayName="purchasePriceArray">
+					<div class="display-pprices display-pprices-l">Purchase Prices</div>
+				<div *ngFor="let purchasePrice of purchasePriceArray.controls; let i=index">
+					<!-- The repeated alias template -->
+					<div class="display-pprices">{{officerInputForm.value.purchasePriceArray[i]}}</div>  
+				  </div>
 			</div>
 
-			{{officerInputForm.value | json}}
+			<div formArrayName="purchasePriceArray">
+					<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
+						<label>
+							Purchase Price {{i+1}} 
+							<input type="number" [formControlName]="i">
+						</label>
+					</div>
+			</div>
 
-			<div style="color:green">Steve, I want these values in the array above to bind to the inputs</div>
-
-			<!-- Steve-this is my attempt below-->
+			<!-- {{officerInputForm.value | json}} -->
 
 			 <!-- <div formControlName="purchasePriceArray">
-				<div *ngFor="let purchasePrice of purchasePrices" [value]="purchasePrice">{{purchasePrice}}</div>
+				<div *ngFor="let purchasePrice of purchasePrices" [value]="purchasePriceArray">{{purchasePrice}}</div>
 			</div> -->
 
 
@@ -97,7 +107,7 @@
 	<h4>Loan Officer Input</h4>
 	<br>
 
-	<form [formGroup]="officerInputForm" (ngSubmit)="onSubmit()">
+
 
 		<label>
 			Down Payment (%)
@@ -134,14 +144,6 @@
 			<input type="text" formControlName="mortgageYears" required>
 		</label>		
 		<br>
-		<div formArrayName="purchasePriceArray">
-			<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
-				<label>
-					Purchase Price {{i+1}} 
-					<input type="number" [formControlName]="i">
-				</label>
-			</div>
-		</div>
 
 	</form>
 	<br>
