@@ -52,14 +52,12 @@ export class PriceVariedDpComponent implements OnInit {
 		return this.officerInputForm.get('purchasePriceArray') as FormArray;
 	}
 
-
-
 	update() {
-		console.log('component before update', this.purchasePrices);
-		this.priceVariedDPService.update();
-		console.log('after component update', this.purchasePrices);
-		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
-		console.log('after values are assigned in component', this.purchasePrices);
+		// console.log('component before update', this.purchasePrices);
+		// this.priceVariedDPService.update();
+		// console.log('after component update', this.purchasePrices);
+		// this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
+		// console.log('after values are assigned in component', this.purchasePrices);
 	}
 
 	// public downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
