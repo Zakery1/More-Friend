@@ -19,7 +19,7 @@ const routes: Routes = [
 	{ path: 'podpE', component: PriceOnePropExactComponent},
 	{ path: 'cashTC', component: CashToCloseComponent},
 	{ path: 'rateFeeCompPurchase', component: RateFeeCompPurchaseComponent},
-	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+	{ path: '', redirectTo: '/pvdp', pathMatch: 'full' },
 	{ path: 'dashboard', component: DashboardComponent },
 ];
 

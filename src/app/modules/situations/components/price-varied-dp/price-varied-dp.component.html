@@ -1,11 +1,45 @@
 <div class="pvdp-main">
 	<h3>Purchase Price Comparison</h3>
+	<form [formGroup]="officerInputForm" (ngSubmit)="onSubmit()">
 	<div class="ppc-top">
 		<div class="ppc">
-			<div class="ppc-row">
-				<div class="display-pprices display-pprices-l">Purchase Price</div>
-				<div *ngFor="let purchasePrice of purchasePrices" class="display-pprices">{{purchasePrice}}</div>
+			<!-- {{officerInputForm.value.purchasePriceArray}} -->
+			<div class="ppc-row" formArrayName="purchasePriceArray">
+					<div class="display-pprices display-pprices-l">Purchase Prices</div>
+				<div *ngFor="let purchasePrice of purchasePriceArray.controls; let i=index">
+					<!-- The repeated alias template -->
+					<div class="display-pprices">{{officerInputForm.value.purchasePriceArray[i]}}</div>  
+				  </div>
 			</div>
+
+			<div formArrayName="purchasePriceArray">
+					<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
+						<label>
+							Purchase Price {{i+1}} 
+							<input (input)="update()" type="number" [formControlName]="i">
+						</label>
+					</div>
+			</div>
+
+			<!-- {{officerInputForm.value | json}} -->
+
+			 <!-- <div formControlName="purchasePriceArray">
+				<div *ngFor="let purchasePrice of purchasePrices" [value]="purchasePriceArray">{{purchasePrice}}</div>
+			</div> -->
+
+
+
+
+			<!-- <select class="form-control" formControlName="state">
+				<option *ngFor="let state of states" [value]="state">{{state}}</option>
+			</select>  -->
+
+			<!-- {{}} -->
+						<!-- Purchase Price {{i+1}}  -->
+						<!-- {{purchasePriceArray}} -->
+						<!-- <div formControlName="i"></div> -->
+						<!-- <input type="number" [formControlName]="i"> -->
+
 			<div class="ppc-row">
 				<div class="display-pprices display-pprices-l">Down Payment</div>
 				<div *ngFor="let downPayment of downPayments" class="display-pprices">{{downPayment}}</div>
@@ -72,7 +106,51 @@
 	<br>
 	<h4>Loan Officer Input</h4>
 	<br>
-	<div class="loi">
+
+
+
+		<label>
+			Down Payment (%)
+			<input type="text" formControlName="downPaymentPercentage" required>
+		</label>
+		<br>
+		<label>
+			Upfront MI/FF (%
+			<input type="text" formControlName="upfrontMiFf" required>
+		</label>
+		<br>
+		<label>
+			Annual MI Percentage (%)
+			<input type="text" formControlName="miPercentage" required>
+		</label>
+		<br>
+		<label>
+			Estimated Taxes (%)
+			<input type="text" formControlName="estimatedTaxes" required>
+		</label>
+		<br>
+		<label>
+			Estimated HOI (%)
+			<input type="text" formControlName="estimateHOI" required>
+		</label>
+		<br>
+		<label>
+			Interest Rate (%)
+			<input type="text" formControlName="interestRate" required>
+		</label>
+		<br>
+		<label>
+			Length of Mortgage (Years)
+			<input type="text" formControlName="mortgageYears" required>
+		</label>		
+		<br>
+
+	</form>
+	<br>
+
+	
+
+	<!-- <div class="loi">
 		<p class="input-line">Down Payment (%)<input (input)="update()" [(ngModel)]="downPaymentPercentage" type="number"></p>		
 		<p class="input-line">Upfront MI/FF (%)<input (input)="update()" [(ngModel)]="upfrontMiFf" type="number"></p>
 		<p class="input-line">Annual MI Percentage (%)<input (input)="update()" [(ngModel)]="miPercentage" type="number"></p>
@@ -82,5 +160,5 @@
 		<p class="input-line">Length of Mortgage (Years)<input (input)="update()" [(ngModel)]="mortgageYears" type="number"></p>
 		<p *ngFor="let purchasePrice of purchasePrices;let index = index;trackBy:trackByFn;" class="input-line">Purchase Price {{1 + index}}<input (input)="update()" [(ngModel)]="purchasePrices[index]" type="number"></p>
 	</div>
-	<button (click)="toOriginal()">Revert to Original Values</button>
+	<button (click)="toOriginal()">Revert to Original Values</button> -->
 </div>

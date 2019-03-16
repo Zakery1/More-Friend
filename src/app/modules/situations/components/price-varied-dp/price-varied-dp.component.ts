@@ -1,5 +1,7 @@
 // angular
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators, FormArray } from '@angular/forms';
+
 
 // services
 import { PurchasePricesService } from '../../../services/purchase-price-service/purchase-prices.service';
@@ -12,17 +14,21 @@ import { PriceVariedDPService } from './services/price-varied-dp.service';
 })
 export class PriceVariedDpComponent implements OnInit {
 
-	private config = {
-		downPaymentPercentage: null,
-		upfrontMiFf: null,
-		miPercentage: null,
-		estimatedTaxes: null,
-		estimateHOI: null,
-		interestRate: null,
-		mortgageYears: null
-	};
+	public purchasePrices: number[] = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
 
-	public purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
+	officerInputForm = this.fb.group({
+		downPaymentPercentage: [''],
+		upfrontMiFf: [''],
+		miPercentage: [''],
+		estimatedTaxes: [''],
+		estimateHOI: [''],
+		interestRate: [''],
+		mortgageYears: [''],
+		purchasePriceArray:  this.fb.array(this.purchasePrices.map(
+			(price: number) => this.fb.control([ price ])
+		))
+	});
+
 	private downPayments = [];
 	private loanAmounts = [];
 	private pAndIs = [];
@@ -33,28 +39,25 @@ export class PriceVariedDpComponent implements OnInit {
 
 
 	constructor(
+		private fb: FormBuilder,
 		private priceVariedDPService: PriceVariedDPService) {
-		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
-		this.downPayments = this.priceVariedDPService.pvdWork.variedDPArrays.downPayments;
-
-		console.log('constructor in component', this.purchasePrices);
+			console.log(this.officerInputForm.value.purchasePriceArray);
 	}
 
 	ngOnInit() {
 		// this.update();
-
 	}
 
-	trackByFn(index: any, item: any) {
-		return index;
+	get purchasePriceArray() {
+		return this.officerInputForm.get('purchasePriceArray') as FormArray;
 	}
 
 	update() {
-		console.log('component before update', this.purchasePrices);
-		this.priceVariedDPService.update();
-		console.log('after component update', this.purchasePrices);
-		this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
-		console.log('after values are assigned in component', this.purchasePrices);
+		// console.log('component before update', this.purchasePrices);
+		// this.priceVariedDPService.update();
+		// console.log('after component update', this.purchasePrices);
+		// this.purchasePrices = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
+		// console.log('after values are assigned in component', this.purchasePrices);
 	}
 
 	// public downPaymentOne = (this.purchasePriceOne * this.downPaymentPercentage) / 100;
