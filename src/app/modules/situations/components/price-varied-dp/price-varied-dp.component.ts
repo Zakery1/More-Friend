@@ -6,6 +6,10 @@ import { FormBuilder, Validators, FormArray } from '@angular/forms';
 // services
 import { PurchasePricesService } from '../../../services/purchase-price-service/purchase-prices.service';
 import { PriceVariedDPService } from './services/price-varied-dp.service';
+import { CalculationsService } from './../../../services/calculations-service/calculations.service';
+
+// interfaces
+import { PurchasePrice } from './../../../interfaces/purchasePrice';
 
 @Component({
 	selector: 'app-price-varied-dp',
@@ -14,7 +18,9 @@ import { PriceVariedDPService } from './services/price-varied-dp.service';
 })
 export class PriceVariedDpComponent implements OnInit {
 
-	public purchasePrices: number[] = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
+	public purchasePrices: PurchasePrice[] = this.priceVariedDPService.pvdWork.variedDPArrays.purchasePrices;
+
+
 
 	officerInputForm = this.fb.group({
 		downPaymentPercentage: [''],
@@ -25,7 +31,7 @@ export class PriceVariedDpComponent implements OnInit {
 		interestRate: [''],
 		mortgageYears: [''],
 		purchasePriceArray:  this.fb.array(this.purchasePrices.map(
-			(price: number) => this.fb.control([ price ])
+			(price: PurchasePrice) => this.fb.control([ price ])
 		))
 	});
 
@@ -40,13 +46,29 @@ export class PriceVariedDpComponent implements OnInit {
 
 	constructor(
 		private fb: FormBuilder,
-		private priceVariedDPService: PriceVariedDPService) {
-			console.log(this.officerInputForm.value.purchasePriceArray);
+		private priceVariedDPService: PriceVariedDPService,
+		private calculationsService: CalculationsService) {
 	}
 
 	ngOnInit() {
-		// this.update();
+		// console.log(this.officerInputForm.controls.purchasePriceArray.value);
 	}
+
+	updatePurchasePrices() {
+		this.officerInputForm.valueChanges.subscribe(() => {
+			this.calculationsService.getPurchasePrices();
+		});
+
+		// const pP = this.officerInputForm.controls.purchasePriceArray.value;
+		// this.calculationsService.getPurchasePrices(pP)
+		// 	.subscribe(purchasePrices => this.purchasePrices = purchasePrices);
+	}
+
+		// this.mainService.updateByIdObservable(req.params.id, updateBody)
+	// .subscribe(
+	// 	(narrative: INarrative) => res.success(narrative),
+	// 	(err) => res.errored(400, err)
+	// );
 
 	get purchasePriceArray() {
 		return this.officerInputForm.get('purchasePriceArray') as FormArray;

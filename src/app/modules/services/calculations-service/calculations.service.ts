@@ -1,12 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
+// interfaces
+import { PurchasePrice } from './../../interfaces/purchasePrice';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class CalculationsService {
 
-	public getPurchasePrices(pP) {
-		console.log('in calculation service', pP);
+	// getHeroes (): Observable<PurchasePrice> {
+	// 	return this.http.get<Hero[]>(this.heroesUrl)
+	// 	  .pipe(
+	// 		tap(_ => this.log('fetched heroes')),
+	// 		catchError(this.handleError('getHeroes', []))
+	// 	  );
+	//   }
+
+	public getPurchasePrices(): Observable<PurchasePrice[]> {
 		return pP;
 	}
 

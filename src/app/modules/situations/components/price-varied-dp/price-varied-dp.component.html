@@ -16,7 +16,7 @@
 					<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
 						<label>
 							Purchase Price {{i+1}} 
-							<input (input)="update()" type="number" [formControlName]="i">
+							<input (input)="updatePurchasePrices()" type="number" [formControlName]="i">
 						</label>
 					</div>
 			</div>
