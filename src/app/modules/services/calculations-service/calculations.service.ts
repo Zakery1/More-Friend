@@ -17,7 +17,8 @@ export class CalculationsService {
 	// 	  );
 	//   }
 
-	public getPurchasePrices(): Observable<PurchasePrice[]> {
+	public getPurchasePrices(pP): Observable<PurchasePrice[]> {
+		console.log('hit service');
 		return pP;
 	}
 

@@ -54,9 +54,9 @@ export class PriceVariedDpComponent implements OnInit {
 		// console.log(this.officerInputForm.controls.purchasePriceArray.value);
 	}
 
-	updatePurchasePrices() {
+	updatePurchasePrices(pPs) {
 		this.officerInputForm.valueChanges.subscribe(() => {
-			this.calculationsService.getPurchasePrices();
+			this.calculationsService.getPurchasePrices(pPs);
 		});
 
 		// const pP = this.officerInputForm.controls.purchasePriceArray.value;
