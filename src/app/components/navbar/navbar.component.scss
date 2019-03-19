@@ -1,5 +1,5 @@
 .nav-bar-main {
-    height: 70px;
+    height: 80px;
 	border-bottom: 2px solid black;
 	.headers {
 		.title {
@@ -13,5 +13,8 @@
 		position: absolute;
 		right: 20px;
 		top: 35px;
+	}
+	.dash-board {
+		margin: 5px;
 	}
 }

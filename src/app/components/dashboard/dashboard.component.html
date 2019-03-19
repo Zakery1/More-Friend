@@ -1,1 +1,18 @@
-<p>Dashboard</p>
+<div class="links">
+		Choose an option <br>
+		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': pvdp===true}" class="link" routerLink="/pvdp">--Price-Varied-DP% --</button>
+		<br>
+		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': pvdpD===true}" class="link" routerLink="/pvdpD">--Price-Varied-DP$ --</button>
+		<br>
+		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': podp===true}" class="link" routerLink="/podp">--Price-OneProp-DP% --</button>
+		<br>
+		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': podpE===true}" class="link" routerLink="/podpE">--Price-OneProp-ExactDP --</button>
+		<br>
+		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': programDP===true}" class="link" routerLink="/programDP">--ProgramDP --</button>
+		<br>
+		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': cashTC===true}" class="link" routerLink="/cashTC">--Cash to Close --</button>
+		<br>
+		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': rateFeeCompPurchase===true}" class="link" routerLink="/rateFeeCompPurchase">-RateFeeCompPurchase-</button>
+
+		<div *ngFor="let item of navbar" (click)="onItemClick($event, item)">{{item}}</div>
+	</div>
