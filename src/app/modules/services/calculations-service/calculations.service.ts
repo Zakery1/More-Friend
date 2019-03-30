@@ -1,34 +1,29 @@
+
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 // interfaces
-import { PurchasePrice } from './../../interfaces/purchasePrice';
+import { LoanValues } from './../../interfaces/loanValues';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class CalculationsService {
 
-	// getHeroes (): Observable<PurchasePrice> {
-	// 	return this.http.get<Hero[]>(this.heroesUrl)
-	// 	  .pipe(
-	// 		tap(_ => this.log('fetched heroes')),
-	// 		catchError(this.handleError('getHeroes', []))
-	// 	  );
-	//   }
-
-	public getPurchasePrices(pP): Observable<PurchasePrice[]> {
+	public getPurchasePrices(pP): Observable<LoanValues[]> {
 		console.log('hit service');
 		return pP;
-	}
-
-	public getPAndI(iR, lA, mYs) {
-		return ((iR / 1200.0 * + lA) / (1.0 - Math.pow(1.0 + iR / 1200.00, -1.0 * mYs * 12)));
 	}
 
 	public getDownPaymentsUsingPercentage(pP, dPP) {
 		return (pP * dPP / 100);
 	}
+
+	// public getPAndI(iR, lA, mYs) {
+	// 	return ((iR / 1200.0 * + lA) / (1.0 - Math.pow(1.0 + iR / 1200.00, -1.0 * mYs * 12)));
+	// }
+
+
 
 	// setDownPayments() {
 	// 	this.pvdWork.variedDPArrays.downPayments = this.pvdWork.variedDPArrays.purchasePrices.map( x => (x * this.pvdWork.variedDPConfig.downPaymentPercentage / 100));

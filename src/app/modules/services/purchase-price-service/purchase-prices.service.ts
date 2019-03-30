@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+import { LoanValues } from '../../interfaces/loanValues';
+
+// Interfaces
+
 
 @Injectable({
 	providedIn: 'root'
 })
 export class PurchasePricesService {
 
-	public purchasePrices: number[] = [];
+	public purchasePrices: LoanValues[];
 	public purchasePriceOne: 225000;
 	public purchasePriceTwo: 250000;
 	public purchasePriceThree: 275000;

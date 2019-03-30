@@ -3,13 +3,19 @@
 	<form [formGroup]="officerInputForm" (ngSubmit)="onSubmit()">
 	<div class="ppc-top">
 		<div class="ppc">
-			<!-- {{officerInputForm.value.purchasePriceArray}} -->
+
 			<div class="ppc-row" formArrayName="purchasePriceArray">
 					<div class="display-pprices display-pprices-l">Purchase Prices</div>
 				<div *ngFor="let purchasePrice of purchasePriceArray.controls; let i=index">
-					<!-- The repeated alias template -->
 					<div class="display-pprices">{{officerInputForm.value.purchasePriceArray[i]}}</div>  
 				  </div>
+			</div>
+
+			
+
+			<div>
+				Down Payment (%)
+				<input (input)="updateDownPayments()" type="number" formControlName="downPaymentPercentage">
 			</div>
 
 			<div formArrayName="purchasePriceArray">
@@ -20,6 +26,12 @@
 						</label>
 					</div>
 			</div>
+
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Down Payment</div>
+				<div *ngFor="let downPayment of downPayments" class="display-pprices">{{downPayment}}</div>
+			</div>
+
 
 			<!-- {{officerInputForm.value | json}} -->
 
@@ -40,10 +52,7 @@
 						<!-- <div formControlName="i"></div> -->
 						<!-- <input type="number" [formControlName]="i"> -->
 
-			<div class="ppc-row">
-				<div class="display-pprices display-pprices-l">Down Payment</div>
-				<div *ngFor="let downPayment of downPayments" class="display-pprices">{{downPayment}}</div>
-			</div>
+
 			<div class="ppc-row">
 				<div class="display-pprices display-pprices-l">Loan Amount</div>
 				<div class="display-pprices">${{loanAmountOne}}</div>
