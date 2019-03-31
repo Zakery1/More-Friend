@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+
+// enums
+import { NavbarEnum } from './../../enums/situations';
+
 
 @Component({
 	selector: 'app-dashboard',
@@ -7,26 +13,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-	navbar = {
-		pvdp: true,
-		pvdpD: false,
-		podp: false,
-		podpE: false,
-		cashTC: false,
-		programDP: false,
-		rateFeeCompPurchase: false,
+	public navBarEnum = NavbarEnum;
+
+	clickNavScenarioes() {
+		
 	}
 
-	constructor() { }
+	clickNavScenario(pvdp) {
+		for (let item in NavbarEnum) {
+			console.log(item)
+		}
+	}
+
+    // keys() : Array<string> {
+    //     var keys = Object.keys(this.navBarEnum);
+    //     return keys;
+    // }
+
+	constructor() {
+		// this.clickNavScenario();
+		console.log( 'navbar enum', this.navBarEnum.pvdp)
+	 }
 
 	ngOnInit() {
 
 	}
-
-	changeRoute(route) {
-		
-	}
-
-
-
 }
