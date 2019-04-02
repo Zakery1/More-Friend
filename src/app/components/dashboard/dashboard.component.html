@@ -1,6 +1,6 @@
 <div class="links">
 		Choose an option <br>
-		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': navBarEnum.pvdp===1}" class="link" routerLink="/pvdp">--Price-Varied-DP% --</button>
+		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': 'Navbar.pvdp.activated'}" class="link" routerLink="/pvdp">--Price-Varied-DP% --</button>
 		<br>
 		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': pvdpD===true}" class="link" routerLink="/pvdpD">--Price-Varied-DP$ --</button>
 		<br>

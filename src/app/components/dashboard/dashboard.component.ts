@@ -1,9 +1,9 @@
-
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
-// enums
-import { NavbarEnum } from './../../enums/situations';
+
+import { Navbar } from './../../models/situations';
+
 
 
 @Component({
@@ -13,26 +13,26 @@ import { NavbarEnum } from './../../enums/situations';
 })
 export class DashboardComponent implements OnInit {
 
-	public navBarEnum = NavbarEnum;
+
 
 	clickNavScenarioes() {
 		
 	}
 
-	clickNavScenario(pvdp) {
-		for (let item in NavbarEnum) {
-			console.log(item)
-		}
-	}
+	// clickNavScenario() {
+	// 	for (let item in Navbar) {
+	// 		console.log(item)
+	// 	}
+	// }
 
     // keys() : Array<string> {
-    //     var keys = Object.keys(this.navBarEnum);
+    //     var keys = Object.keys(this.Navbar);
     //     return keys;
     // }
 
 	constructor() {
 		// this.clickNavScenario();
-		console.log( 'navbar enum', this.navBarEnum.pvdp)
+		console.log( 'navbar', Navbar.pvdp);
 	 }
 
 	ngOnInit() {
