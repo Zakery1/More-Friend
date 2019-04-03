@@ -19,8 +19,8 @@ import { LoanValues } from './../../../interfaces/loanValues';
 })
 export class PriceVariedDpComponent implements OnInit {
 
-	purchasePrices: LoanValues[];
-	// downPayments: LoanValues[] = this.purchasePriceService;
+	purchasePrices: LoanValues = this.purchasePriceService.purchasePrices;
+	downPayments: LoanValues = [12212, 1212121, 121212, 1212121];
 
 	officerInputForm = this.fb.group({
 		downPaymentPercentage: ['5'],
@@ -31,11 +31,11 @@ export class PriceVariedDpComponent implements OnInit {
 		interestRate: [''],
 		mortgageYears: [''],
 		purchasePriceArray:  this.fb.array(this.purchasePrices.map(
-			(price: LoanValues) => this.fb.control([ price ])
+			(price: number) => this.fb.control([ price ])
 		)),
-		// downPaymentArray: this.fb.array(this.downPayments.map(
-		// 	(downPayment: LoanValues) => this.fb.control([ downPayment ])
-		// ))
+		downPaymentArray: this.fb.array(this.downPayments.map(
+			(downPayment: number) => this.fb.control([ downPayment ])
+		))
 	});
 
 	private loanAmounts = [];

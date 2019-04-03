@@ -9,7 +9,7 @@ import { LoanValues } from '../../interfaces/loanValues';
 })
 export class PurchasePricesService {
 
-	public purchasePrices: LoanValues[];
+	public purchasePrices;
 	public purchasePriceOne: 225000;
 	public purchasePriceTwo: 250000;
 	public purchasePriceThree: 275000;
