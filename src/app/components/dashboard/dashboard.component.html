@@ -1,4 +1,4 @@
-<div class="links">
+<!-- <div class="links">
 		Choose an option <br>
 		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': 'Navbar.pvdp.activated'}" class="link" routerLink="/pvdp">--Price-Varied-DP% --</button>
 		<br>
@@ -14,7 +14,8 @@
 		<br>
 		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': rateFeeCompPurchase===true}" class="link" routerLink="/rateFeeCompPurchase">-RateFeeCompPurchase-</button>
 	</div>
-	<br>
-	<div class="links">
-		<button class="link" *ngFor="let item of navBarEnum">{{item}}</button>
+	<br> -->
+	<div class="links" >
+		<button *ngFor="let key of navbarKeys" class="link" [ngClass]="{'chosen-scenario': navbarObj[key].activated}"  [routerLink]="[navbarObj[key].route]">{{ navbarObj[key].label }}</button>
+		<!-- <some-element [ngStyle]="{'font-style': 1}">...</some-element> -->
 	</div>

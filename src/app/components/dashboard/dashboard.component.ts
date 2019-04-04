@@ -13,10 +13,13 @@ import { Navbar } from './../../models/situations';
 })
 export class DashboardComponent implements OnInit {
 
+	public navbarObj = Navbar;
+	public navbarKeys = [];
+
 
 
 	clickNavScenarioes() {
-		
+
 	}
 
 	// clickNavScenario() {
@@ -25,15 +28,17 @@ export class DashboardComponent implements OnInit {
 	// 	}
 	// }
 
-    // keys() : Array<string> {
-    //     var keys = Object.keys(this.Navbar);
-    //     return keys;
-    // }
+	// keys() : Array<string> {
+	//     var keys = Object.keys(this.Navbar);
+	//     return keys;
+	// }
 
 	constructor() {
 		// this.clickNavScenario();
-		console.log( 'navbar', Navbar.pvdp);
-	 }
+		console.log('navbarObj', this.navbarObj);
+
+		this.navbarKeys = Object.keys(this.navbarObj);
+	}
 
 	ngOnInit() {
 
