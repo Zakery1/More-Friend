@@ -13,48 +13,23 @@ import { Navbar } from './../../models/situations';
 })
 export class DashboardComponent implements OnInit {
 
+	public navBarInitial = JSON.parse(JSON.stringify(Navbar));
 	public navbarObj = Navbar;
 	public navbarKeys = [];
-
+	public activeKey = 'pvdp';
 
 
 	switchNav(key) {
-		for (let i = 0; i < this.navbarKeys.length; i++) {
-			console.log('for loop', this.navbarKeys[i]);
-		}
-		console.log(this.navbarKeys[key].activated);
+		this.activeKey = key;
+	}
+	constructor() {
+		// this.clickNavScenario();
+		// console.log('navbarObj', this.navbarObj);
 
-			this.navbarObj[key].activated = !this.navbarObj[key].activated;
+		this.navbarKeys = Object.keys(this.navbarObj);
 	}
 
-	// const raw = {
-	// 	item1: { key: 'sdfd', value:'sdfd' },
-	// 	item2: { key: 'sdfd', value:'sdfd' },
-	// 	item3: { key: 'sdfd', value:'sdfd' }
-	//   };
+	ngOnInit() {
 
-	//   const allowed = ['item1', 'item3'];
-
-	// const filtered = Object.keys(raw)
-	// 	.filter(key => allowed.includes(key))
-	// 	.reduce((obj, key) => {
-	// 		obj[key] = raw[key];
-	// 		return obj;
-	// 	}, {});
-
-	// console.log(filtered);
-	// this.navbarObj[key].activated = !this.navbarObj[key].activated;
-
-
-
-constructor() {
-	// this.clickNavScenario();
-	console.log('navbarObj', this.navbarObj);
-
-	this.navbarKeys = Object.keys(this.navbarObj);
-}
-
-ngOnInit() {
-
-}
+	}
 }

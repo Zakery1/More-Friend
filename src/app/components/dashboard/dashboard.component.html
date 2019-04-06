@@ -15,7 +15,7 @@
 		<button (click)="changeRoute()" [ngClass]="{'chosen-scenario': rateFeeCompPurchase===true}" class="link" routerLink="/rateFeeCompPurchase">-RateFeeCompPurchase-</button>
 	</div>
 	<br> -->
-	<div class="links">
-		<button (click)="switchNav(key)" *ngFor="let key of navbarKeys" class="link" [ngClass]="{'chosen-scenario': navbarObj[key].activated}"  [routerLink]="[navbarObj[key].route]">{{ navbarObj[key].label }}</button>
+	<div class="links" >
+		<button (click)="switchNav(key)" *ngFor="let key of navbarKeys" class="link" [class.chosen-scenario]="key === activeKey"  [routerLink]="[navbarObj[key].route]">{{ navbarObj[key].label }}</button>
 		<!-- <some-element [ngStyle]="{'font-style': 1}">...</some-element> -->
 	</div>
