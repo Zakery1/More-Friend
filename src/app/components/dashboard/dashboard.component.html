@@ -14,7 +14,9 @@
 			[class.chosen-scenario]="key === activeKey"
 			*ngFor="let key of navbarKeys"
 		   [routerLink]="[navbarObj[key].route]"
-		   >
+		   routerLinkActive #rla="routerLinkActive"
+		   [active]="rla.isActive">
+		   
 		   {{ navbarObj[key].label }}
 		</a>
 	  </nav>

@@ -1,5 +1,13 @@
 
 .Dashboard-main {
+
+	nav {
+		.mat-ink-bar{ background-color:#fff; }
+		a {
+			color: black;
+		}
+	}
+
 	margin-top: 20px;
 	.links {
 		display: flex;
@@ -22,7 +30,7 @@
 	  
 	
 	.chosen-scenario {
-		background: rgb(218, 200, 253);
+		background: rgb(215, 215, 215);
 	}
 	
 	
@@ -36,6 +44,7 @@
 		color: blue;
 	}
 }
+
 
 
   
