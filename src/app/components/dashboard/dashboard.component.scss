@@ -1,17 +1,50 @@
-.links {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: stretch;
+
+.Dashboard-main {
+
+	nav {
+		.mat-ink-bar{ background-color:#fff; }
+		a {
+			color: black;
+		}
+	}
+
+	margin-top: 20px;
+	.links {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		align-content: stretch;
+	}
+
+	.example-form {
+		min-width: 150px;
+		max-width: 500px;
+		width: 100%;
+	  }
+	  
+	  .example-full-width {
+		width: 100%;
+	  }
+	  
+	
+	.chosen-scenario {
+		background: rgb(215, 215, 215);
+	}
+	
+	
+	
+	button {
+		width: 200px;
+		margin: 0 5px 0 5px;
+	}
+	
+	.blue {
+		color: blue;
+	}
 }
 
-.chosen-scenario {
-	background: green;
-}
 
-button {
-	width: 200px;
-	margin: 0 5px 0 5px;
-}
+
+  

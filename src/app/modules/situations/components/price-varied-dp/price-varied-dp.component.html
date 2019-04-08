@@ -16,10 +16,16 @@
 					<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
 						<label>
 							Purchase Price {{i+1}} 
-							<input (input)="update()" type="number" [formControlName]="i">
+							<input type="number" [formControlName]="i">
 						</label>
+
+						<!-- <mat-form-field class="example-full-width">
+								<input placeholder="Purchase Price {{i+1}}" [formControlName]="i">
+						</mat-form-field> -->
+
 					</div>
 			</div>
+
 
 			<!-- {{officerInputForm.value | json}} -->
 

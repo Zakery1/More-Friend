@@ -11,6 +11,7 @@ import { PriceVariedExactDpComponent } from './components/price-varied-exact-dp/
 import { ProgramDpComponent } from './components/program-dp/program-dp.component';
 import { CashToCloseComponent } from './components/cash-to-close/cash-to-close.component';
 import { RateFeeCompPurchaseComponent } from './components/rate-fee-comp-purchase/rate-fee-comp-purchase.component';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -27,7 +28,8 @@ import { RateFeeCompPurchaseComponent } from './components/rate-fee-comp-purchas
 	imports: [
 		CommonModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		MatInputModule
 	]
 })
 export class SituationsModule { }
