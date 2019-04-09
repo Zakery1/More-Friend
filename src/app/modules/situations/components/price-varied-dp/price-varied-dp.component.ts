@@ -30,11 +30,11 @@ export class PriceVariedDpComponent implements OnInit {
 		estimateHOI: [''],
 		interestRate: [''],
 		mortgageYears: [''],
-		purchasePriceArray:  this.fb.array(this.purchasePrices.map(
-			(price: number) => this.fb.control([ price ])
+		purchasePriceArray: this.fb.array(this.purchasePrices.map(
+			(price: number) => this.fb.control([price])
 		)),
 		downPaymentArray: this.fb.array(this.downPayments.map(
-			(downPayment: number) => this.fb.control([ downPayment ])
+			(downPayment: number) => this.fb.control([downPayment])
 		))
 	});
 
@@ -64,15 +64,21 @@ export class PriceVariedDpComponent implements OnInit {
 		return this.officerInputForm.get('downPaymentArray') as FormArray;
 	}
 
-	updatePurchasePrices(pPs) {
+	updatePurchasePrices() {
 		this.officerInputForm.valueChanges.subscribe(() => {
-			this.calculationsService.getPurchasePrices(pPs);
+			this.calculationsService.getPurchasePrices();
 		});
 
-	}}
-	// updateDownPayments(dP, DPP) {
+	// updateDownPayments() {
+	// 	this.officerInputForm.valueChanges.subscribe(() => {
+	// 		this.calculationsService.getDownPaymentsUsingPercentage();
+	// 	})
+	// 	}
 
-	// }
+	}
+}
+
+
 
 
 

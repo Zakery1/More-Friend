@@ -10,9 +10,10 @@ import { LoanValues } from './../../interfaces/loanValues';
 })
 export class CalculationsService {
 
-	public getPurchasePrices(pP): Observable<LoanValues[]> {
-		console.log('hit service');
-		return pP;
+	
+
+	public getPurchasePrices(): Observable<LoanValues[]> {
+		return ;
 	}
 
 	public getDownPaymentsUsingPercentage(pP, dPP) {

@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+
+
+import { Navbar } from './../../models/situations';
+
+
 
 @Component({
 	selector: 'app-dashboard',
@@ -7,9 +13,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-	constructor() { }
+	public navBarInitial = JSON.parse(JSON.stringify(Navbar));
+	public navbarObj = Navbar;
+	public navbarKeys = [];
+	public activeKey = 'pvdp';
 
-	ngOnInit() {
+
+	switchNav(key) {
+		this.activeKey = key;
+	}
+	constructor() {
+		// this.clickNavScenario();
+		// console.log('navbarObj', this.navbarObj);
+
+		this.navbarKeys = Object.keys(this.navbarObj);
 	}
 
+	ngOnInit() {
+
+	}
 }

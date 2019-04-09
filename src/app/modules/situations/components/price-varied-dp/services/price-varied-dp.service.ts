@@ -61,7 +61,7 @@ export class PriceVariedDPService {
 	public setPurchasePrices() {
 		console.log('before setPurchases in service', this.arrays.purchasePrices);
 		this.arrays.purchasePrices = this.arrays.purchasePrices.map(pP => {
-			return this.calculationsService.getPurchasePrices(pP);
+			return this.calculationsService.getPurchasePrices();
 			// console.log('call get in service', this.calculationsService.getPurchasePrices(pP));
 		});
 		console.log('after map', this.arrays.purchasePrices);

@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CashToCloseComponent } from './modules/situations/components/cash-to-close/cash-to-close.component';
 
 
+
 const routes: Routes = [
 	{ path: 'pvdp', component: PriceVariedDpComponent },
 	{ path: 'pvdpD', component: PriceVariedExactDpComponent },

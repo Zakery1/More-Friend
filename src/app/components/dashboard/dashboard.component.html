@@ -1,1 +1,25 @@
-<p>Dashboard</p>
+
+	
+<!-- <div class="links">
+	<div  (click)="switchNav(key)" *ngFor="let key of navbarKeys" class="link"   [routerLink]="[navbarObj[key].route]">
+		<button [class.chosen-scenario]="key === activeKey">{{ navbarObj[key].label }}</button>
+	</div>
+	<mat-checkbox >  </mat-checkbox>
+	<br>
+</div> -->
+<div class="Dashboard-main">
+  <nav mat-tab-nav-bar>
+		<a mat-tab-link
+		(click)="switchNav(key)"
+			[class.chosen-scenario]="key === activeKey"
+			*ngFor="let key of navbarKeys"
+		   [routerLink]="[navbarObj[key].route]"
+		   routerLinkActive #rla="routerLinkActive"
+		   [active]="rla.isActive">
+		   
+		   {{ navbarObj[key].label }}
+		</a>
+	  </nav>
+</div>
+
+  

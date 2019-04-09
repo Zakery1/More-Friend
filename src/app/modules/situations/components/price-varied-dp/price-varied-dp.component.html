@@ -11,6 +11,11 @@
 				  </div>
 			</div>
 
+			<div class="ppc-row">
+				<div class="display-pprices display-pprices-l">Down Payment</div>
+				<div *ngFor="let downPayment of downPayments" class="display-pprices">{{downPayment}}</div>
+			</div>
+
 			
 
 			<div>
@@ -23,14 +28,17 @@
 						<label>
 							Purchase Price {{i+1}} 
 							<input (input)="updatePurchasePrices()" type="number" [formControlName]="i">
+							<!-- <input type="number" [formControlName]="i"> -->
 						</label>
+
+						<!-- <mat-form-field class="example-full-width">
+								<input placeholder="Purchase Price {{i+1}}" [formControlName]="i">
+						</mat-form-field> -->
+
 					</div>
 			</div>
 
-			<div class="ppc-row">
-				<div class="display-pprices display-pprices-l">Down Payment</div>
-				<div *ngFor="let downPayment of downPayments" class="display-pprices">{{downPayment}}</div>
-			</div>
+
 
 
 			<!-- {{officerInputForm.value | json}} -->
