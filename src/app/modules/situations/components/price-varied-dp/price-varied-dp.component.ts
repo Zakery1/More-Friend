@@ -19,31 +19,7 @@ import { LoanValues } from './../../../interfaces/loanValues';
 })
 export class PriceVariedDpComponent implements OnInit {
 
-	purchasePrices: LoanValues = this.purchasePriceService.purchasePrices;
-	downPayments: LoanValues = [12212, 1212121, 121212, 1212121];
-
-	officerInputForm = this.fb.group({
-		downPaymentPercentage: ['5'],
-		upfrontMiFf: [''],
-		miPercentage: [''],
-		estimatedTaxes: [''],
-		estimateHOI: [''],
-		interestRate: [''],
-		mortgageYears: [''],
-		purchasePriceArray: this.fb.array(this.purchasePrices.map(
-			(price: number) => this.fb.control([price])
-		)),
-		downPaymentArray: this.fb.array(this.downPayments.map(
-			(downPayment: number) => this.fb.control([downPayment])
-		))
-	});
-
-	private loanAmounts = [];
-	private pAndIs = [];
-	private mortgageInsurances = [];
-	private estimatePTs = [];
-	private estimatesHIs = [];
-	private estimatedPayments = [];
+	officerInputForm = this.calculationsService.officerInputForm;
 
 	constructor(
 		private fb: FormBuilder,
@@ -52,7 +28,7 @@ export class PriceVariedDpComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.purchasePrices = this.purchasePriceService.purchasePrices;
+		console.log('this.fb.control', this.officerInputForm);
 		// console.log(this.officerInputForm.controls.purchasePriceArray.value);
 	}
 
@@ -64,18 +40,17 @@ export class PriceVariedDpComponent implements OnInit {
 		return this.officerInputForm.get('downPaymentArray') as FormArray;
 	}
 
-	updatePurchasePrices() {
-		this.officerInputForm.valueChanges.subscribe(() => {
-			this.calculationsService.getPurchasePrices();
-		});
-
+	// updatePurchasePrices() {
+	// 	this.officerInputForm.valueChanges.subscribe(() => {
+	// 		this.calculationsService.getPurchasePrices();
+	// 	});
+	// }
 	// updateDownPayments() {
 	// 	this.officerInputForm.valueChanges.subscribe(() => {
 	// 		this.calculationsService.getDownPaymentsUsingPercentage();
-	// 	})
+	// 		});
 	// 	}
 
-	}
 }
 
 

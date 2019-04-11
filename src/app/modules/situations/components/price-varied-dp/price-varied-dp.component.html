@@ -3,7 +3,6 @@
 	<form [formGroup]="officerInputForm" (ngSubmit)="onSubmit()">
 	<div class="ppc-top">
 		<div class="ppc">
-
 			<div class="ppc-row" formArrayName="purchasePriceArray">
 					<div class="display-pprices display-pprices-l">Purchase Prices</div>
 				<div *ngFor="let purchasePrice of purchasePriceArray.controls; let i=index">
@@ -27,7 +26,7 @@
 					<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
 						<label>
 							Purchase Price {{i+1}} 
-							<input (input)="updatePurchasePrices()" type="number" [formControlName]="i">
+							<input type="number" [formControlName]="i">
 							<!-- <input type="number" [formControlName]="i"> -->
 						</label>
 
